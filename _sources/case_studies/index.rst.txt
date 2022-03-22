@@ -1,0 +1,11 @@
+Case Studies
+============
+
+More advanced examples
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Case Studies
+   :hidden:
+
+   exploring-weather

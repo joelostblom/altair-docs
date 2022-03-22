@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Bump Chart &#8212; Altair 5.0.0 documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-plot.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <a class="navbar-brand" href="../index.html">
+<p class="title">Altair</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/overview.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/data.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/API.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/ecosystem.html">
+  Ecosystem
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../releases/changes.html">
+  Release Notes
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/getting_help.html">
+  Help
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/altair-logo-light.png" class="logo" alt="logo">
+      <br>
+      <p class="site-version" id="site-version">5.0.0</p>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="bump-chart">
+<span id="gallery-bump-chart"></span><h1>Bump Chart<a class="headerlink" href="#bump-chart" title="Permalink to this headline">¶</a></h1>
+<p>This example shows a bump chart.  The data is first grouped into six-month
+intervals using pandas. The ranks are computed by Altair using a
+window transform.</p>
+
+<div id="bump_chart-rst-altair-plot-0">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-2d67bb8c5bca6bb3fa2f4195a4c04169"}, "mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "symbol", "type": "nominal"}, "x": {"field": "date", "timeUnit": "yearmonth", "title": "date", "type": "ordinal"}, "y": {"field": "rank", "type": "ordinal"}}, "height": 150, "title": "Bump Chart for Stock Prices", "transform": [{"window": [{"op": "rank", "field": "", "as": "rank"}], "groupby": ["date"], "sort": [{"field": "price", "order": "descending"}]}], "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-2d67bb8c5bca6bb3fa2f4195a4c04169": [{"date": "2000-01-31T00:00:00", "symbol": "AAPL", "price": 25.94}, {"date": "2000-01-31T00:00:00", "symbol": "AMZN", "price": 64.56}, {"date": "2000-01-31T00:00:00", "symbol": "IBM", "price": 100.52}, {"date": "2000-01-31T00:00:00", "symbol": "MSFT", "price": 39.81}, {"date": "2000-07-31T00:00:00", "symbol": "AAPL", "price": 27.703333333333333}, {"date": "2000-07-31T00:00:00", "symbol": "AMZN", "price": 50.96666666666667}, {"date": "2000-07-31T00:00:00", "symbol": "IBM", "price": 98.925}, {"date": "2000-07-31T00:00:00", "symbol": "MSFT", "price": 32.38833333333333}, {"date": "2001-01-31T00:00:00", "symbol": "AAPL", "price": 13.271666666666667}, {"date": "2001-01-31T00:00:00", "symbol": "AMZN", "price": 29.02}, {"date": "2001-01-31T00:00:00", "symbol": "IBM", "price": 94.94333333333333}, {"date": "2001-01-31T00:00:00", "symbol": "MSFT", "price": 24.463333333333335}, {"date": "2001-07-31T00:00:00", "symbol": "AAPL", "price": 10.648333333333333}, {"date": "2001-07-31T00:00:00", "symbol": "AMZN", "price": 13.255}, {"date": "2001-07-31T00:00:00", "symbol": "IBM", "price": 96.39166666666667}, {"date": "2001-07-31T00:00:00", "symbol": "MSFT", "price": 26.429999999999996}, {"date": "2002-01-31T00:00:00", "symbol": "AAPL", "price": 9.961666666666666}, {"date": "2002-01-31T00:00:00", "symbol": "AMZN", "price": 9.703333333333333}, {"date": "2002-01-31T00:00:00", "symbol": "IBM", "price": 97.00833333333333}, {"date": "2002-01-31T00:00:00", "symbol": "MSFT", "price": 24.445000000000004}, {"date": "2002-07-31T00:00:00", "symbol": "AAPL", "price": 10.495}, {"date": "2002-07-31T00:00:00", "symbol": "AMZN", "price": 15.670000000000002}, {"date": "2002-07-31T00:00:00", "symbol": "IBM", "price": 76.82166666666667}, {"date": "2002-07-31T00:00:00", "symbol": "MSFT", "price": 22.0}, {"date": "2003-01-31T00:00:00", "symbol": "AAPL", "price": 7.458333333333333}, {"date": "2003-01-31T00:00:00", "symbol": "AMZN", "price": 19.05333333333333}, {"date": "2003-01-31T00:00:00", "symbol": "IBM", "price": 69.04166666666667}, {"date": "2003-01-31T00:00:00", "symbol": "MSFT", "price": 20.551666666666666}, {"date": "2003-07-31T00:00:00", "symbol": "AAPL", "price": 8.456666666666667}, {"date": "2003-07-31T00:00:00", "symbol": "AMZN", "price": 31.763333333333335}, {"date": "2003-07-31T00:00:00", "symbol": "IBM", "price": 75.05833333333334}, {"date": "2003-07-31T00:00:00", "symbol": "MSFT", "price": 20.425}, {"date": "2004-01-31T00:00:00", "symbol": "AAPL", "price": 10.921666666666667}, {"date": "2004-01-31T00:00:00", "symbol": "AMZN", "price": 51.028333333333336}, {"date": "2004-01-31T00:00:00", "symbol": "IBM", "price": 82.86333333333333}, {"date": "2004-01-31T00:00:00", "symbol": "MSFT", "price": 22.006666666666664}, {"date": "2004-07-31T00:00:00", "symbol": "AAPL", "price": 14.14}, {"date": "2004-07-31T00:00:00", "symbol": "AMZN", "price": 45.285}, {"date": "2004-07-31T00:00:00", "symbol": "IBM", "price": 82.85333333333334}, {"date": "2004-07-31T00:00:00", "symbol": "MSFT", "price": 22.005}, {"date": "2005-01-31T00:00:00", "symbol": "AAPL", "price": 27.834999999999997}, {"date": "2005-01-31T00:00:00", "symbol": "AMZN", "price": 40.053333333333335}, {"date": "2005-01-31T00:00:00", "symbol": "GOOG", "price": 165.5}, {"date": "2005-01-31T00:00:00", "symbol": "IBM", "price": 84.14}, {"date": "2005-01-31T00:00:00", "symbol": "MSFT", "price": 23.58}, {"date": "2005-07-31T00:00:00", "symbol": "AAPL", "price": 40.30166666666667}, {"date": "2005-07-31T00:00:00", "symbol": "AMZN", "price": 35.92666666666667}, {"date": "2005-07-31T00:00:00", "symbol": "GOOG", "price": 241.27999999999997}, {"date": "2005-07-31T00:00:00", "symbol": "IBM", "price": 76.30833333333334}, {"date": "2005-07-31T00:00:00", "symbol": "MSFT", "price": 23.176666666666666}, {"date": "2006-01-31T00:00:00", "symbol": "AAPL", "price": 62.218333333333334}, {"date": "2006-01-31T00:00:00", "symbol": "AMZN", "price": 44.715}, {"date": "2006-01-31T00:00:00", "symbol": "GOOG", "price": 371.1716666666667}, {"date": "2006-01-31T00:00:00", "symbol": "IBM", "price": 76.93666666666667}, {"date": "2006-01-31T00:00:00", "symbol": "MSFT", "price": 24.853333333333335}, {"date": "2006-07-31T00:00:00", "symbol": "AAPL", "price": 64.43333333333334}, {"date": "2006-07-31T00:00:00", "symbol": "AMZN", "price": 34.89333333333334}, {"date": "2006-07-31T00:00:00", "symbol": "GOOG", "price": 391.385}, {"date": "2006-07-31T00:00:00", "symbol": "IBM", "price": 74.86666666666667}, {"date": "2006-07-31T00:00:00", "symbol": "MSFT", "price": 23.066666666666666}, {"date": "2007-01-31T00:00:00", "symbol": "AAPL", "price": 81.35666666666667}, {"date": "2007-01-31T00:00:00", "symbol": "AMZN", "price": 36.41833333333333}, {"date": "2007-01-31T00:00:00", "symbol": "GOOG", "price": 450.6016666666667}, {"date": "2007-01-31T00:00:00", "symbol": "IBM", "price": 85.55166666666668}, {"date": "2007-01-31T00:00:00", "symbol": "MSFT", "price": 26.938333333333333}, {"date": "2007-07-31T00:00:00", "symbol": "AAPL", "price": 108.71833333333332}, {"date": "2007-07-31T00:00:00", "symbol": "AMZN", "price": 59.39166666666667}, {"date": "2007-07-31T00:00:00", "symbol": "GOOG", "price": 484.9333333333334}, {"date": "2007-07-31T00:00:00", "symbol": "IBM", "price": 96.96499999999999}, {"date": "2007-07-31T00:00:00", "symbol": "MSFT", "price": 27.64}, {"date": "2008-01-31T00:00:00", "symbol": "AAPL", "price": 166.26}, {"date": "2008-01-31T00:00:00", "symbol": "AMZN", "price": 87.185}, {"date": "2008-01-31T00:00:00", "symbol": "GOOG", "price": 623.0500000000001}, {"date": "2008-01-31T00:00:00", "symbol": "IBM", "price": 107.08166666666666}, {"date": "2008-01-31T00:00:00", "symbol": "MSFT", "price": 31.271666666666665}, {"date": "2008-07-31T00:00:00", "symbol": "AAPL", "price": 159.60166666666666}, {"date": "2008-07-31T00:00:00", "symbol": "AMZN", "price": 74.28166666666667}, {"date": "2008-07-31T00:00:00", "symbol": "GOOG", "price": 511.98499999999996}, {"date": "2008-07-31T00:00:00", "symbol": "IBM", "price": 116.70333333333333}, {"date": "2008-07-31T00:00:00", "symbol": "MSFT", "price": 26.515}, {"date": "2009-01-31T00:00:00", "symbol": "AAPL", "price": 109.82166666666666}, {"date": "2009-01-31T00:00:00", "symbol": "AMZN", "price": 60.60166666666667}, {"date": "2009-01-31T00:00:00", "symbol": "GOOG", "price": 360.385}, {"date": "2009-01-31T00:00:00", "symbol": "IBM", "price": 95.53166666666668}, {"date": "2009-01-31T00:00:00", "symbol": "MSFT", "price": 21.485}, {"date": "2009-07-31T00:00:00", "symbol": "AAPL", "price": 126.98166666666667}, {"date": "2009-07-31T00:00:00", "symbol": "AMZN", "price": 77.69333333333333}, {"date": "2009-07-31T00:00:00", "symbol": "GOOG", "price": 393.9816666666666}, {"date": "2009-07-31T00:00:00", "symbol": "IBM", "price": 101.81666666666666}, {"date": "2009-07-31T00:00:00", "symbol": "MSFT", "price": 20.138333333333332}, {"date": "2010-01-31T00:00:00", "symbol": "AAPL", "price": 190.79333333333332}, {"date": "2010-01-31T00:00:00", "symbol": "AMZN", "price": 114.86666666666667}, {"date": "2010-01-31T00:00:00", "symbol": "GOOG", "price": 537.7600000000001}, {"date": "2010-01-31T00:00:00", "symbol": "IBM", "price": 122.175}, {"date": "2010-01-31T00:00:00", "symbol": "MSFT", "price": 27.51}, {"date": "2010-07-31T00:00:00", "symbol": "AAPL", "price": 213.82}, {"date": "2010-07-31T00:00:00", "symbol": "AMZN", "price": 123.61}, {"date": "2010-07-31T00:00:00", "symbol": "GOOG", "price": 543.495}, {"date": "2010-07-31T00:00:00", "symbol": "IBM", "price": 126.35499999999999}, {"date": "2010-07-31T00:00:00", "symbol": "MSFT", "price": 28.735}]}};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#bump_chart-rst-altair-plot-0', spec, opt).catch(console.err);
+  });
+</script>
+</div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">stocks</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">stocks</span><span class="p">()</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">stocks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;6M&quot;</span><span class="p">),</span><span class="s2">&quot;symbol&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;date:O&quot;</span><span class="p">,</span> <span class="n">timeUnit</span><span class="o">=</span><span class="s2">&quot;yearmonth&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="p">),</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rank:O&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;symbol:N&quot;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_window</span><span class="p">(</span>
+    <span class="n">rank</span><span class="o">=</span><span class="s2">&quot;rank()&quot;</span><span class="p">,</span>
+    <span class="n">sort</span><span class="o">=</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">SortField</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;descending&quot;</span><span class="p">)],</span>
+    <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bump Chart for Stock Prices&quot;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2016-2020, Altair Developers.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Bar Chart with Labels &#8212; Altair 5.0.0 documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-plot.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <a class="navbar-brand" href="../index.html">
+<p class="title">Altair</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/overview.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/data.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/API.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/ecosystem.html">
+  Ecosystem
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../releases/changes.html">
+  Release Notes
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/getting_help.html">
+  Help
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/altair-logo-light.png" class="logo" alt="logo">
+      <br>
+      <p class="site-version" id="site-version">5.0.0</p>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="bar-chart-with-labels">
+<span id="gallery-bar-chart-with-labels"></span><h1>Bar Chart with Labels<a class="headerlink" href="#bar-chart-with-labels" title="Permalink to this headline">¶</a></h1>
+<p>This example shows a basic horizontal bar chart with labels created with Altair.</p>
+
+<div id="bar_chart_with_labels-rst-altair-plot-0">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "bar", "encoding": {"x": {"field": "wheat", "type": "quantitative"}, "y": {"field": "year", "type": "ordinal"}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 3}, "encoding": {"text": {"field": "wheat", "type": "quantitative"}, "x": {"field": "wheat", "type": "quantitative"}, "y": {"field": "year", "type": "ordinal"}}}], "data": {"name": "data-76d1ce26ea5761007c35827e1564d86c"}, "height": 900, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-76d1ce26ea5761007c35827e1564d86c": [{"year": 1565, "wheat": 41.0, "wages": 5.0}, {"year": 1570, "wheat": 45.0, "wages": 5.05}, {"year": 1575, "wheat": 42.0, "wages": 5.08}, {"year": 1580, "wheat": 49.0, "wages": 5.12}, {"year": 1585, "wheat": 41.5, "wages": 5.15}, {"year": 1590, "wheat": 47.0, "wages": 5.25}, {"year": 1595, "wheat": 64.0, "wages": 5.54}, {"year": 1600, "wheat": 27.0, "wages": 5.61}, {"year": 1605, "wheat": 33.0, "wages": 5.69}, {"year": 1610, "wheat": 32.0, "wages": 5.78}, {"year": 1615, "wheat": 33.0, "wages": 5.94}, {"year": 1620, "wheat": 35.0, "wages": 6.01}, {"year": 1625, "wheat": 33.0, "wages": 6.12}, {"year": 1630, "wheat": 45.0, "wages": 6.22}, {"year": 1635, "wheat": 33.0, "wages": 6.3}, {"year": 1640, "wheat": 39.0, "wages": 6.37}, {"year": 1645, "wheat": 53.0, "wages": 6.45}, {"year": 1650, "wheat": 42.0, "wages": 6.5}, {"year": 1655, "wheat": 40.5, "wages": 6.6}, {"year": 1660, "wheat": 46.5, "wages": 6.75}, {"year": 1665, "wheat": 32.0, "wages": 6.8}, {"year": 1670, "wheat": 37.0, "wages": 6.9}, {"year": 1675, "wheat": 43.0, "wages": 7.0}, {"year": 1680, "wheat": 35.0, "wages": 7.3}, {"year": 1685, "wheat": 27.0, "wages": 7.6}, {"year": 1690, "wheat": 40.0, "wages": 8.0}, {"year": 1695, "wheat": 50.0, "wages": 8.5}, {"year": 1700, "wheat": 30.0, "wages": 9.0}, {"year": 1705, "wheat": 32.0, "wages": 10.0}, {"year": 1710, "wheat": 44.0, "wages": 11.0}, {"year": 1715, "wheat": 33.0, "wages": 11.75}, {"year": 1720, "wheat": 29.0, "wages": 12.5}, {"year": 1725, "wheat": 39.0, "wages": 13.0}, {"year": 1730, "wheat": 26.0, "wages": 13.3}, {"year": 1735, "wheat": 32.0, "wages": 13.6}, {"year": 1740, "wheat": 27.0, "wages": 14.0}, {"year": 1745, "wheat": 27.5, "wages": 14.5}, {"year": 1750, "wheat": 31.0, "wages": 15.0}, {"year": 1755, "wheat": 35.5, "wages": 15.7}, {"year": 1760, "wheat": 31.0, "wages": 16.5}, {"year": 1765, "wheat": 43.0, "wages": 17.6}, {"year": 1770, "wheat": 47.0, "wages": 18.5}, {"year": 1775, "wheat": 44.0, "wages": 19.5}, {"year": 1780, "wheat": 46.0, "wages": 21.0}, {"year": 1785, "wheat": 42.0, "wages": 23.0}, {"year": 1790, "wheat": 47.5, "wages": 25.5}, {"year": 1795, "wheat": 76.0, "wages": 27.5}, {"year": 1800, "wheat": 79.0, "wages": 28.5}, {"year": 1805, "wheat": 81.0, "wages": 29.5}, {"year": 1810, "wheat": 99.0, "wages": 30.0}, {"year": 1815, "wheat": 78.0, "wages": null}, {"year": 1820, "wheat": 54.0, "wages": null}]}};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#bar_chart_with_labels-rst-altair-plot-0', spec, opt).catch(console.err);
+  });
+</script>
+</div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">wheat</span><span class="p">()</span>
+
+<span class="n">bars</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;wheat:Q&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;year:O&quot;</span>
+<span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">bars</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
+    <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="n">baseline</span><span class="o">=</span><span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="n">dx</span><span class="o">=</span><span class="mi">3</span>  <span class="c1"># Nudges text to right so it doesn&#39;t appear on top of the bar</span>
+<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;wheat:Q&#39;</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="n">bars</span> <span class="o">+</span> <span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">900</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2016-2020, Altair Developers.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

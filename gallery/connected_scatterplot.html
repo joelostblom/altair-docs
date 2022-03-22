@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Connected Scatterplot (Lines with Custom Paths) &#8212; Altair 5.0.0 documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-plot.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <a class="navbar-brand" href="../index.html">
+<p class="title">Altair</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/overview.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/data.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/API.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/ecosystem.html">
+  Ecosystem
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../releases/changes.html">
+  Release Notes
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/getting_help.html">
+  Help
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/altair-logo-light.png" class="logo" alt="logo">
+      <br>
+      <p class="site-version" id="site-version">5.0.0</p>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="connected-scatterplot-lines-with-custom-paths">
+<span id="gallery-connected-scatterplot"></span><h1>Connected Scatterplot (Lines with Custom Paths)<a class="headerlink" href="#connected-scatterplot-lines-with-custom-paths" title="Permalink to this headline">¶</a></h1>
+<p>This example show how the order encoding can be used to draw a custom path. The dataset tracks miles driven per capita along with gas prices annually from 1956 to 2010.
+It is based on Hannah Fairfield’s article ‘Driving Shifts Into Reverse’. See <a class="reference external" href="https://archive.nytimes.com/www.nytimes.com/imagepages/2010/05/02/business/02metrics.html">https://archive.nytimes.com/www.nytimes.com/imagepages/2010/05/02/business/02metrics.html</a> for the original.</p>
+
+<div id="connected_scatterplot-rst-altair-plot-0">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-e24c277102dddc2eceb7d9aaeb087c70"}, "mark": {"type": "line", "point": true}, "encoding": {"order": {"field": "year", "type": "quantitative"}, "x": {"field": "miles", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "gas", "scale": {"zero": false}, "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-e24c277102dddc2eceb7d9aaeb087c70": [{"side": "left", "year": 1956, "miles": 3675, "gas": 2.38}, {"side": "right", "year": 1957, "miles": 3706, "gas": 2.4}, {"side": "bottom", "year": 1958, "miles": 3766, "gas": 2.26}, {"side": "top", "year": 1959, "miles": 3905, "gas": 2.31}, {"side": "right", "year": 1960, "miles": 3935, "gas": 2.27}, {"side": "bottom", "year": 1961, "miles": 3977, "gas": 2.25}, {"side": "right", "year": 1962, "miles": 4085, "gas": 2.22}, {"side": "bottom", "year": 1963, "miles": 4218, "gas": 2.12}, {"side": "bottom", "year": 1964, "miles": 4369, "gas": 2.11}, {"side": "bottom", "year": 1965, "miles": 4538, "gas": 2.14}, {"side": "top", "year": 1966, "miles": 4676, "gas": 2.14}, {"side": "bottom", "year": 1967, "miles": 4827, "gas": 2.14}, {"side": "right", "year": 1968, "miles": 5038, "gas": 2.13}, {"side": "right", "year": 1969, "miles": 5207, "gas": 2.07}, {"side": "right", "year": 1970, "miles": 5376, "gas": 2.01}, {"side": "bottom", "year": 1971, "miles": 5617, "gas": 1.9300000000000002}, {"side": "bottom", "year": 1972, "miles": 5973, "gas": 1.87}, {"side": "right", "year": 1973, "miles": 6154, "gas": 1.9}, {"side": "left", "year": 1974, "miles": 5943, "gas": 2.34}, {"side": "bottom", "year": 1975, "miles": 6111, "gas": 2.31}, {"side": "bottom", "year": 1976, "miles": 6389, "gas": 2.32}, {"side": "top", "year": 1977, "miles": 6630, "gas": 2.36}, {"side": "bottom", "year": 1978, "miles": 6883, "gas": 2.23}, {"side": "left", "year": 1979, "miles": 6744, "gas": 2.68}, {"side": "left", "year": 1980, "miles": 6672, "gas": 3.3}, {"side": "right", "year": 1981, "miles": 6732, "gas": 3.3}, {"side": "right", "year": 1982, "miles": 6835, "gas": 2.92}, {"side": "right", "year": 1983, "miles": 6943, "gas": 2.66}, {"side": "right", "year": 1984, "miles": 7130, "gas": 2.48}, {"side": "right", "year": 1985, "miles": 7323, "gas": 2.36}, {"side": "left", "year": 1986, "miles": 7558, "gas": 1.76}, {"side": "top", "year": 1987, "miles": 7770, "gas": 1.76}, {"side": "bottom", "year": 1988, "miles": 8089, "gas": 1.6800000000000002}, {"side": "left", "year": 1989, "miles": 8397, "gas": 1.75}, {"side": "top", "year": 1990, "miles": 8529, "gas": 1.88}, {"side": "right", "year": 1991, "miles": 8535, "gas": 1.78}, {"side": "right", "year": 1992, "miles": 8662, "gas": 1.69}, {"side": "left", "year": 1993, "miles": 8855, "gas": 1.6}, {"side": "bottom", "year": 1994, "miles": 8909, "gas": 1.5899999999999999}, {"side": "bottom", "year": 1995, "miles": 9150, "gas": 1.6}, {"side": "top", "year": 1996, "miles": 9192, "gas": 1.67}, {"side": "right", "year": 1997, "miles": 9416, "gas": 1.65}, {"side": "bottom", "year": 1998, "miles": 9590, "gas": 1.3900000000000001}, {"side": "right", "year": 1999, "miles": 9687, "gas": 1.5}, {"side": "top", "year": 2000, "miles": 9717, "gas": 1.8900000000000001}, {"side": "left", "year": 2001, "miles": 9699, "gas": 1.77}, {"side": "bottom", "year": 2002, "miles": 9814, "gas": 1.6400000000000001}, {"side": "right", "year": 2003, "miles": 9868, "gas": 1.8599999999999999}, {"side": "left", "year": 2004, "miles": 9994, "gas": 2.14}, {"side": "left", "year": 2005, "miles": 10067, "gas": 2.5300000000000002}, {"side": "right", "year": 2006, "miles": 10037, "gas": 2.79}, {"side": "right", "year": 2007, "miles": 10025, "gas": 2.95}, {"side": "left", "year": 2008, "miles": 9880, "gas": 3.31}, {"side": "bottom", "year": 2009, "miles": 9657, "gas": 2.38}, {"side": "left", "year": 2010, "miles": 9596, "gas": 2.61}]}};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#connected_scatterplot-rst-altair-plot-0', spec, opt).catch(console.err);
+  });
+</script>
+</div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">driving</span><span class="p">()</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;miles&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;gas&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="n">order</span><span class="o">=</span><span class="s1">&#39;year&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2016-2020, Altair Developers.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

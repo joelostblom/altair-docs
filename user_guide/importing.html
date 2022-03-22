@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Importing Vega &amp; Vega-Lite Versions &#8212; Altair 5.0.0 documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-plot.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Displaying Altair Charts" href="display_frontends.html" />
+    <link rel="prev" title="Altair Internals: Understanding the Library" href="internals.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <a class="navbar-brand" href="../index.html">
+<p class="title">Altair</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/overview.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="data.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../gallery/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="API.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ecosystem.html">
+  Ecosystem
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../releases/changes.html">
+  Release Notes
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="getting_help.html">
+  Help
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/altair-logo-light.png" class="logo" alt="logo">
+      <br>
+      <p class="site-version" id="site-version">5.0.0</p>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Specifying Data in Altair
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="encoding.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="marks.html">
+   Marks
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="transform/index.html">
+   Data Transformations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/aggregate.html">
+     Aggregate Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/bin.html">
+     Bin transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/calculate.html">
+     Calculate Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/density.html">
+     Density Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/filter.html">
+     Filter Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/flatten.html">
+     Flatten Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/fold.html">
+     Fold Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/impute.html">
+     Impute Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/joinaggregate.html">
+     Join Aggregate Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/lookup.html">
+     Lookup Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/loess.html">
+     LOESS Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/pivot.html">
+     Pivot Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/quantile.html">
+     Quantile Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/regression.html">
+     Regression Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/sample.html">
+     Sample Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/stack.html">
+     Stack Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/timeunit.html">
+     TimeUnit Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/window.html">
+     Window Transform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interactions.html">
+   Interactive Charts: Bindings, Selections, Conditions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compound_charts.html">
+   Compound Charts: Layer, HConcat, VConcat, Repeat, Facet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scale_resolve.html">
+   Scale and Guide Resolution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="times_and_dates.html">
+   Times and Dates in Altair
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="customization.html">
+   Customizing Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Top-Level Chart Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="saving_charts.html">
+   Saving Altair Charts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Usage
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="internals.html">
+   Altair Internals: Understanding the Library
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Importing Vega &amp; Vega-Lite Versions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="display_frontends.html">
+   Displaying Altair Charts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="custom_renderers.html">
+   Customizing Renderers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_transformers.html">
+   Data transformers
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="importing-vega-vega-lite-versions">
+<span id="importing"></span><h1>Importing Vega &amp; Vega-Lite Versions<a class="headerlink" href="#importing-vega-vega-lite-versions" title="Permalink to this headline">¶</a></h1>
+<p>The main Altair API is based on version 2.X of <a class="reference external" href="http://vega.github.io/vega-lite/">Vega-Lite</a>. The core of the API,
+found in the <code class="docutils literal notranslate"><span class="pre">altair.vegalite.v2.schema</span></code> module, is programmatically generated
+from the Vega-Lite schema.</p>
+<p>Altair additionally provides wrappers for several other schemas:</p>
+<ul class="simple">
+<li><p>Vega-Lite 1.X in <code class="docutils literal notranslate"><span class="pre">altair.vegalite.v1</span></code></p></li>
+<li><p>Vega 2.X in <code class="docutils literal notranslate"><span class="pre">altair.vega.v2</span></code></p></li>
+<li><p>Vega 3.X in <code class="docutils literal notranslate"><span class="pre">altair.vega.v3</span></code></p></li>
+</ul>
+<p>So, for example, if you would like to create Altair plots targeting Vega-Lite
+version 1, you can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair.vegalite.v1</span> <span class="k">as</span> <span class="nn">alt</span>
+</pre></div>
+</div>
+<p>and then proceed to use the Altair version 1 API.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We strongly recommend all users transition to Vega-Lite 4.x and Vega 5.x.
+These versions support many new features, are more stable, and Altair 4
+works best with them.</p>
+</div>
+<p>Because Altair has focused primarily on the vega-lite API, the vega wrappers are
+far less developed than the vega-lite wrappers, though it is possible to
+create Vega plots using a very low-level Python interface that mirrors the
+schema itself.</p>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="internals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Altair Internals: Understanding the Library</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="display_frontends.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Displaying Altair Charts</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2016-2020, Altair Developers.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
