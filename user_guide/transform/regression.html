@@ -411,10 +411,10 @@ regression model parameters, one per group.</p>
 <ul class="simple">
 <li><p>linear (<code class="docutils literal notranslate"><span class="pre">linear</span></code>): <em>y = a + b * x</em></p></li>
 <li><p>logarithmic (<code class="docutils literal notranslate"><span class="pre">log</span></code>): <em>y = a + b * log(x)</em></p></li>
-<li><p>exponential (<code class="docutils literal notranslate"><span class="pre">exp</span></code>): <em>y = a + eb * x</em></p></li>
-<li><p>power (<code class="docutils literal notranslate"><span class="pre">pow</span></code>): <em>y = a * xb</em></p></li>
-<li><p>quadratic (<code class="docutils literal notranslate"><span class="pre">quad</span></code>): <em>y = a + b * x + c * x2</em></p></li>
-<li><p>polynomial (<code class="docutils literal notranslate"><span class="pre">poly</span></code>): <em>y = a + b * x + … + k * xorder</em></p></li>
+<li><p>exponential (<code class="docutils literal notranslate"><span class="pre">exp</span></code>): * y = a * e^(b * x)*</p></li>
+<li><p>power (<code class="docutils literal notranslate"><span class="pre">pow</span></code>): <em>y = a * x^b</em></p></li>
+<li><p>quadratic (<code class="docutils literal notranslate"><span class="pre">quad</span></code>): <em>y = a + b * x + c * x^2</em></p></li>
+<li><p>polynomial (<code class="docutils literal notranslate"><span class="pre">poly</span></code>): <em>y = a + b * x + … + k * x^(order)</em></p></li>
 </ul>
 <p>All models are fit using ordinary least squares.
 For non-parametric locally weighted regression, see the

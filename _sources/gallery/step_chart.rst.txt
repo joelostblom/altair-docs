@@ -16,6 +16,7 @@ The full list of interpolation options includes 'linear',
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

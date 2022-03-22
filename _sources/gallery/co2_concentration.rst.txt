@@ -13,6 +13,7 @@ It was inspired by `Gregor Aisch's work at datawrapper
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

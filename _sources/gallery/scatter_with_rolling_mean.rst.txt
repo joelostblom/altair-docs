@@ -12,6 +12,7 @@ is used to calculate the mean of the maximum temperature around each date.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

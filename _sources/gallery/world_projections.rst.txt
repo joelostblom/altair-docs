@@ -13,6 +13,7 @@ Altair, see https://vega.github.io/vega-lite/docs/projection.html
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

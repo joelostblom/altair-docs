@@ -11,6 +11,7 @@ A simple example of how to make a strip plot.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

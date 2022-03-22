@@ -13,6 +13,7 @@ Here we sort the top 10 highest ranking movies of IMDB.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

@@ -11,6 +11,7 @@ A choropleth map of unemployment rate per county in the US
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

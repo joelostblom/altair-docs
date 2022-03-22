@@ -13,6 +13,7 @@ cause the values to be stacked horizontally.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

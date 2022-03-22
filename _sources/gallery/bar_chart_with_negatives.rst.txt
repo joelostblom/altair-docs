@@ -11,6 +11,7 @@ This example shows a bar chart with both positive and negative values.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

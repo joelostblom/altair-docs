@@ -12,6 +12,7 @@ The tables update to reflect the selection on the scatter plot.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

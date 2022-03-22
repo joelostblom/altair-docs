@@ -16,6 +16,7 @@ This example shows a parallel coordinates chart with the Iris dataset.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

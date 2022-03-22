@@ -11,6 +11,7 @@ This example shows how to make a trellis scatter plot.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

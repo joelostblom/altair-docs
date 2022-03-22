@@ -18,6 +18,7 @@ This example shows how multiple user inputs can be layered onto a chart. The fou
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

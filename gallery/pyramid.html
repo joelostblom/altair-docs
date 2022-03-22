@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Interactive Legend &#8212; Altair 5.0.0 documentation</title>
+    <title>Pyramid Pie Chart &#8212; Altair 5.0.0 documentation</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -197,42 +197,38 @@
               
               <div>
                 
-  <section id="interactive-legend">
-<span id="gallery-interactive-legend"></span><h1>Interactive Legend<a class="headerlink" href="#interactive-legend" title="Permalink to this headline">¶</a></h1>
-<p>The following shows how to create a chart with an interactive legend, by
-binding the selection to <code class="docutils literal notranslate"><span class="pre">&quot;legend&quot;</span></code>. Such a binding only works with
-<code class="docutils literal notranslate"><span class="pre">selection_single</span></code> or <code class="docutils literal notranslate"><span class="pre">selection_multi</span></code> when projected over a single
-field or encoding.</p>
+  <section id="pyramid-pie-chart">
+<span id="gallery-pyramid"></span><h1>Pyramid Pie Chart<a class="headerlink" href="#pyramid-pie-chart" title="Permalink to this headline">¶</a></h1>
+<p>Altair reproduction of <a class="reference external" href="http://robslink.com/SAS/democd91/pyramid_pie.htm">http://robslink.com/SAS/democd91/pyramid_pie.htm</a></p>
 
-<div id="interactive_legend-rst-altair-plot-0">
+<div id="pyramid-rst-altair-plot-0">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": "area", "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "opacity": {"condition": {"value": 1, "selection": "selector009"}, "value": 0.2}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "axis": null, "field": "count", "stack": "center", "type": "quantitative"}}, "selection": {"selector009": {"type": "multi", "fields": ["series"], "bind": "legend"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "strokeOpacity": 0}}, "data": {"name": "data-11d56cc5ae4599d896b08c826ddc7c76"}, "mark": {"type": "arc", "outerRadius": 80}, "encoding": {"color": {"field": "category", "legend": {"legendX": 160, "legendY": 50, "orient": "none", "title": null}, "scale": {"domain": ["Sky", "Shady side of a pyramid", "Sunny side of a pyramid"], "range": ["#416D9D", "#674028", "#DEAC58"]}, "type": "nominal"}, "order": {"field": "value", "type": "quantitative"}, "theta": {"field": "value", "scale": {"range": [2.356, 8.639]}, "type": "quantitative"}}, "height": 150, "width": 150, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-11d56cc5ae4599d896b08c826ddc7c76": [{"category": "Sky", "value": 75}, {"category": "Shady side of a pyramid", "value": 10}, {"category": "Sunny side of a pyramid", "value": 15}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#interactive_legend-rst-altair-plot-0', spec, opt).catch(console.err);
+      vegaEmbed('#pyramid-rst-altair-plot-0', spec, opt).catch(console.err);
   });
 </script>
 </div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
-<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">unemployment_across_industries</span><span class="o">.</span><span class="n">url</span>
+<span class="n">category</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sky&#39;</span><span class="p">,</span> <span class="s1">&#39;Shady side of a pyramid&#39;</span><span class="p">,</span> <span class="s1">&#39;Sunny side of a pyramid&#39;</span><span class="p">]</span>
+<span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#416D9D&quot;</span><span class="p">,</span> <span class="s2">&quot;#674028&quot;</span><span class="p">,</span> <span class="s2">&quot;#DEAC58&quot;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="n">category</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">]})</span>
 
-<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;series&#39;</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">&#39;legend&#39;</span><span class="p">)</span>
-
-<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">mark_area</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;yearmonth(date):T&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y&#39;</span><span class="p">,</span> <span class="n">tickSize</span><span class="o">=</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;sum(count):Q&#39;</span><span class="p">,</span> <span class="n">stack</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;series:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;category20b&#39;</span><span class="p">)),</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_arc</span><span class="p">(</span><span class="n">outerRadius</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Theta</span><span class="p">(</span><span class="s1">&#39;value:Q&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.356</span><span class="p">,</span> <span class="mf">8.639</span><span class="p">])),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;category:N&#39;</span><span class="p">,</span>
+        <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">category</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">color</span><span class="p">),</span>
+        <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">legendX</span><span class="o">=</span><span class="mi">160</span><span class="p">,</span> <span class="n">legendY</span><span class="o">=</span><span class="mi">50</span><span class="p">)),</span>
+    <span class="n">order</span><span class="o">=</span><span class="s1">&#39;value:Q&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span><span class="o">.</span><span class="n">configure_view</span><span class="p">(</span><span class="n">strokeOpacity</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

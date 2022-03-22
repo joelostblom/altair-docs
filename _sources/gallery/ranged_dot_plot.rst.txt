@@ -11,6 +11,7 @@ This example shows a ranged dot plot that uses 'layer' to convey changing life e
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

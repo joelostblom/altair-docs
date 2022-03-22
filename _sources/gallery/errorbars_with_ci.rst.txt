@@ -13,6 +13,7 @@ The confidence intervals are computed internally in vega by a non-parametric
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

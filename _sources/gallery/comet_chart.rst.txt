@@ -14,6 +14,7 @@ is shown in `this blogpost <https://medium.com/de-dataverbinders/comet-charts-in
 
 .. altair-plot::
     :code-below:
+    
 
     
 

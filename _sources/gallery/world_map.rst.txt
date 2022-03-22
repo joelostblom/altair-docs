@@ -13,6 +13,7 @@ different background layers.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

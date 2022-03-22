@@ -12,6 +12,7 @@ in the years of 1930s.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

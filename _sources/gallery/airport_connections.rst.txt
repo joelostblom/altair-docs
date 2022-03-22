@@ -13,6 +13,7 @@ are displayed on mouseover via a single selection.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

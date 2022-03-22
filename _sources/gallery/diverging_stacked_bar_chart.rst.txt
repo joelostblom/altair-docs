@@ -11,6 +11,7 @@ This example shows a diverging stacked bar chart for sentiments towards a set of
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

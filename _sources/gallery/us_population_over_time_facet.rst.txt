@@ -12,6 +12,7 @@ using a wrapped faceting of the data by decade.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

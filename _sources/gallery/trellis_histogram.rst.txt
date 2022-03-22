@@ -12,6 +12,7 @@ https://vega.github.io/vega-lite/examples/trellis_bar_histogram.html
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

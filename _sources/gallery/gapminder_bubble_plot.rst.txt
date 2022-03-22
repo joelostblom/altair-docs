@@ -13,6 +13,7 @@ in Lisa Charlotte Rost's blog post `'One Chart, Twelve Charting Libraries' <http
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

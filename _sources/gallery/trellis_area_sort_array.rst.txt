@@ -13,6 +13,7 @@ sorted by `['MSFT', 'AAPL', 'IBM', 'AMZN']`
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

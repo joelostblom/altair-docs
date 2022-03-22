@@ -12,6 +12,7 @@ data values as a percentage of total.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

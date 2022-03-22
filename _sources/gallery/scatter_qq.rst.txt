@@ -11,6 +11,7 @@ A quantile-quantile plot comparing input data to theoretical distributions.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

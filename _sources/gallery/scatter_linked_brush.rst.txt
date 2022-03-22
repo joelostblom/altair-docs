@@ -12,6 +12,7 @@ points across multiple panels.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

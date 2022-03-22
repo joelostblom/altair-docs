@@ -18,6 +18,7 @@ aggregating identical metadata for the final plot.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

@@ -12,6 +12,7 @@ A window transformation is used to rank each after each match day, sorting by po
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

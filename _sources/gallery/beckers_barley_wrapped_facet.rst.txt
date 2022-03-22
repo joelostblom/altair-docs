@@ -13,6 +13,7 @@ demonstrating the usage of `columns` argument to create wrapped facet.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

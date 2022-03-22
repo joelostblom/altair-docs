@@ -13,6 +13,7 @@ This is adapted from Vega-Lite example https://vega.github.io/editor/#/examples/
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

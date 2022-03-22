@@ -12,6 +12,7 @@ This is an example of a stacked bar chart using data which contains crop yields 
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

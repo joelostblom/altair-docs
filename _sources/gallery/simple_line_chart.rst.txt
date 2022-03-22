@@ -12,6 +12,7 @@ columns.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

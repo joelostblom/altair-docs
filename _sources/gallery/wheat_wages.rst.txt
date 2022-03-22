@@ -14,6 +14,7 @@ This is a more polished version of the simpler chart in :ref:`gallery_bar_and_li
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

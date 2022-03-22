@@ -13,6 +13,7 @@ top chart can be selected by interacting with the bottom chart.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

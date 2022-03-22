@@ -11,6 +11,7 @@ This example shows Google's stock price over time as a step chart with its area 
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

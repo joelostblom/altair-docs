@@ -12,6 +12,7 @@ the regression transform.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

@@ -12,6 +12,7 @@ the LOESS transform (LOcally Estimated Scatterplot Smoothing).
 
 .. altair-plot::
     :code-below:
+    
 
     
 

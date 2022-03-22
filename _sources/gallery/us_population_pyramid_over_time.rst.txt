@@ -13,6 +13,7 @@ distribution over time.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

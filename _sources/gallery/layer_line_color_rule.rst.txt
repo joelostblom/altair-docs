@@ -13,6 +13,7 @@ with a layered rule showing the average values.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

@@ -11,6 +11,7 @@ Three choropleths representing disjoint data from the same table.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

@@ -12,6 +12,7 @@ An example of a layered chart of text over a heatmap using the cars dataset.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

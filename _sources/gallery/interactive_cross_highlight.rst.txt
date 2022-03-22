@@ -13,6 +13,7 @@ see a detail of the distribution in the upper panel.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

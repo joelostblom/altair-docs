@@ -20,6 +20,7 @@ and tie a *nearest* selection to these, tied to the "x" field.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

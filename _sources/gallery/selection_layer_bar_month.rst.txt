@@ -13,6 +13,7 @@ value within the selected interval.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

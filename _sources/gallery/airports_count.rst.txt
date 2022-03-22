@@ -12,6 +12,7 @@ airports on a background of US states.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

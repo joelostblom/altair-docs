@@ -11,6 +11,7 @@ How to layer a tick chart on top of a bar chart.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

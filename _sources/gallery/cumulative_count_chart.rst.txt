@@ -13,6 +13,7 @@ Adapted from https://vega.github.io/vega-lite/examples/area_cumulative_freq.html
 
 .. altair-plot::
     :code-below:
+    
 
     
 

@@ -11,6 +11,7 @@ A bar chart overlayed with a rolling mean. In this example the average of values
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

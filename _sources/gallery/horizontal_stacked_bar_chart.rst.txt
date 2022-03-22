@@ -11,6 +11,7 @@ This is an example of a horizontal stacked bar chart using data which contains c
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

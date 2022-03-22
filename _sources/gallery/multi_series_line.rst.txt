@@ -12,6 +12,7 @@ This example shows how to make a multi series line chart of the daily closing st
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

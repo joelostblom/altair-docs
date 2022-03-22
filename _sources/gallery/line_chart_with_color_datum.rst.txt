@@ -13,6 +13,7 @@ This is adapted from this corresponding Vega-Lite Example:
 
 .. altair-plot::
     :code-below:
+    
 
     
 

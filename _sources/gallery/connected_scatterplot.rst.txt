@@ -13,6 +13,7 @@ It is based on Hannah Fairfield's article 'Driving Shifts Into Reverse'. See htt
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

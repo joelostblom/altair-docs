@@ -11,6 +11,7 @@ This example shows how to format the tick labels of the y-axis of a chart as per
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

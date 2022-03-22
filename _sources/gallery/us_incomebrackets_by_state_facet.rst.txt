@@ -12,6 +12,7 @@ faceted over income brackets
 
 .. altair-plot::
     :code-below:
+    
 
     
 

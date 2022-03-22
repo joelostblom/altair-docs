@@ -13,6 +13,7 @@ adjusts the axis limits in another, more detailed view.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

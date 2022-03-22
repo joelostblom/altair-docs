@@ -13,6 +13,7 @@ a google search for the car name.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

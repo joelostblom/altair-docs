@@ -11,6 +11,7 @@ How to make a line chart with a bootstrapped 95% confidence interval band.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

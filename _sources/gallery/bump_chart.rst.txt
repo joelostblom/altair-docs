@@ -13,6 +13,7 @@ window transform.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

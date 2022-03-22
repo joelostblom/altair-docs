@@ -19,6 +19,7 @@ directly in the `hconcat()` function, which joins the two plots together.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

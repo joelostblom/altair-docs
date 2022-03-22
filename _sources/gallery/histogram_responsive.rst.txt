@@ -13,6 +13,7 @@ change on the top panel.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

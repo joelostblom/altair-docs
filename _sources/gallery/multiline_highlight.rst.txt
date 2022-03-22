@@ -14,6 +14,7 @@ https://bl.ocks.org/amitkaps/fe4238e716db53930b2f1a70d3401701
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

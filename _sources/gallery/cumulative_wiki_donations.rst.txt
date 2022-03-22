@@ -12,6 +12,7 @@ This chart shows cumulative donations to Wikipedia over the past 10 years. Inspi
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

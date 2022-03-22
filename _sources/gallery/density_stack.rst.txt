@@ -16,6 +16,7 @@ differences.
 
 .. altair-plot::
     :code-below:
+    
 
     
 

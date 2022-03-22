@@ -12,6 +12,7 @@ overlayed on a map.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

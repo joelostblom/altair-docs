@@ -11,6 +11,7 @@ This example shows github contributions by the day of week and hour of the day.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

@@ -11,6 +11,7 @@ This example is a grid of isotype figures.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

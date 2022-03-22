@@ -20,6 +20,7 @@ simplified Altair version of `the VegaLite version <https://vega.github.io/vega-
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

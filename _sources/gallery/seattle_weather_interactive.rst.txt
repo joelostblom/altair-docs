@@ -13,6 +13,7 @@ see the distribution of weather types in a particular date range.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

@@ -11,6 +11,7 @@ This example shows a visualization of global deaths from natural disasters.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

@@ -11,6 +11,7 @@ This example shows a basic scatter plot with labels created with Altair.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt

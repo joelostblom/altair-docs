@@ -11,6 +11,7 @@ A simple scatter plot of a data set with errorbars.
 
 .. altair-plot::
     :code-below:
+    
 
     
     import altair as alt
