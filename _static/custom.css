@@ -40,7 +40,22 @@ table.docutils td li {
     font-size: 26px !important;
     font-weight: 800 !important;
     color: #fff !important;
-    margin-left: 180%;
+    text-align: center;
+    width: 100%;
+}
+div#navbar-start {
+    width: 27%;
+    margin-left: 0px !important;
+}
+@media only screen and (max-width: 719px) {
+  /* For mobile phones: */
+    div#navbar-start {
+        width: 60%;
+        margin-left: 0px !important;
+    }
+    .navbar-light p.title {
+        text-align: right;
+    }
 }
 
 /* Version number in the same darkblue color as other text */
