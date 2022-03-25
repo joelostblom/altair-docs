@@ -583,7 +583,7 @@ by weather type:</p>
 </div><p>And now we can vertically concatenate this histogram to the points plot above,
 and add a brush selection tool such that the histogram reflects the content
 of the selection (for more information on selections, see
-<a class="reference internal" href="../user_guide/interactions.html#user-guide-interactions"><span class="std std-ref">Interactive Charts: Bindings, Selections, Conditions</span></a>):</p>
+<a class="reference internal" href="../user_guide/interactions.html#user-guide-interactions"><span class="std std-ref">Interactive Charts: Parameters, Conditions, Bindings</span></a>):</p>
 <div class="highlight-python notranslate" id="exploring-weather-rst-altair-source-13"><div class="highlight"><pre><span></span><span class="n">brush</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">)</span>
 
 <span class="n">points</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">()</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
