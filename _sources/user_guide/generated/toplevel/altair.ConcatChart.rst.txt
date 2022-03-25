@@ -14,6 +14,7 @@
    .. autosummary::
    
       ~ConcatChart.__init__
+      ~ConcatChart.add_parameter
       ~ConcatChart.add_selection
       ~ConcatChart.configure
       ~ConcatChart.configure_arc

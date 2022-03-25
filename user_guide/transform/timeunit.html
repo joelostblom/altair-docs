@@ -37,7 +37,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -290,6 +290,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../interactions2.html">
+   Parameters: Variables and Selections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../configuration.html">
+   Top-Level Chart Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../compound_charts.html">
    Compound Charts: Layer, HConcat, VConcat, Repeat, Facet
   </a>
@@ -453,7 +463,7 @@ measurements in Seattle during the year 2010:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "line", "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "temp", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "line", "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "temp", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -477,7 +487,7 @@ and plotting only the mean monthly temperature:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "line", "encoding": {"x": {"field": "date", "timeUnit": "month", "type": "temporal"}, "y": {"aggregate": "mean", "field": "temp", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "line", "encoding": {"x": {"field": "date", "timeUnit": "month", "type": "temporal"}, "y": {"aggregate": "mean", "field": "temp", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -502,7 +512,7 @@ This can be useful when plotting a bar chart or other discrete chart type:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "bar", "encoding": {"x": {"field": "date", "timeUnit": "month", "type": "ordinal"}, "y": {"aggregate": "mean", "field": "temp", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "bar", "encoding": {"x": {"field": "date", "timeUnit": "month", "type": "ordinal"}, "y": {"aggregate": "mean", "field": "temp", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -529,7 +539,7 @@ to give a profile of Seattle temperatures through the year:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "rect", "encoding": {"color": {"aggregate": "max", "field": "temp", "type": "quantitative"}, "x": {"field": "date", "timeUnit": "date", "title": "day", "type": "ordinal"}, "y": {"field": "date", "timeUnit": "month", "title": "month", "type": "ordinal"}}, "title": "2010 Daily High Temperatures in Seattle (F)", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "rect", "encoding": {"color": {"aggregate": "max", "field": "temp", "type": "quantitative"}, "x": {"field": "date", "timeUnit": "date", "title": "day", "type": "ordinal"}, "y": {"field": "date", "timeUnit": "month", "title": "month", "type": "ordinal"}}, "title": "2010 Daily High Temperatures in Seattle (F)", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -559,7 +569,7 @@ method. For example:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "line", "encoding": {"x": {"axis": {"format": "%b"}, "field": "month", "type": "temporal"}, "y": {"aggregate": "mean", "field": "temp", "type": "quantitative"}}, "transform": [{"field": "date", "timeUnit": "month", "as": "month"}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/seattle-temps.csv"}, "mark": "line", "encoding": {"x": {"axis": {"format": "%b"}, "field": "month", "type": "temporal"}, "y": {"aggregate": "mean", "field": "temp", "type": "quantitative"}}, "transform": [{"field": "date", "timeUnit": "month", "as": "month"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

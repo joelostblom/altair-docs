@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Parameters: Variables and Selections &#8212; Altair 5.0.0 documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-plot.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/altair-gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Top-Level Chart Configuration" href="configuration.html" />
+    <link rel="prev" title="Interactive Charts: Bindings, Selections, Conditions" href="interactions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <a class="navbar-brand" href="../index.html">
+<p class="title">Altair</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/overview.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="data.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../gallery/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="API.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ecosystem.html">
+  Ecosystem
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../releases/changes.html">
+  Release Notes
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="getting_help.html">
+  Help
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/altair-logo-light.png" class="logo" alt="logo">
+      <br>
+      <p class="site-version" id="site-version">5.0.0</p>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User Guide
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Specifying Data in Altair
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="encoding.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="marks.html">
+   Marks
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="transform/index.html">
+   Data Transformations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/aggregate.html">
+     Aggregate Transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/bin.html">
+     Bin transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/calculate.html">
+     Calculate Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/density.html">
+     Density Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/filter.html">
+     Filter Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/flatten.html">
+     Flatten Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/fold.html">
+     Fold Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/impute.html">
+     Impute Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/joinaggregate.html">
+     Join Aggregate Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/lookup.html">
+     Lookup Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/loess.html">
+     LOESS Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/pivot.html">
+     Pivot Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/quantile.html">
+     Quantile Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/regression.html">
+     Regression Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/sample.html">
+     Sample Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/stack.html">
+     Stack Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/timeunit.html">
+     TimeUnit Transform
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform/window.html">
+     Window Transform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interactions.html">
+   Interactive Charts: Bindings, Selections, Conditions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Parameters: Variables and Selections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Top-Level Chart Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compound_charts.html">
+   Compound Charts: Layer, HConcat, VConcat, Repeat, Facet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scale_resolve.html">
+   Scale and Guide Resolution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="times_and_dates.html">
+   Times and Dates in Altair
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="customization.html">
+   Customizing Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Top-Level Chart Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="saving_charts.html">
+   Saving Altair Charts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Usage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="internals.html">
+   Altair Internals: Understanding the Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="importing.html">
+   Importing Vega &amp; Vega-Lite Versions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="display_frontends.html">
+   Displaying Altair Charts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="custom_renderers.html">
+   Customizing Renderers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_transformers.html">
+   Data transformers
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-example-using-a-variable">
+   Basic Example: Using a variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-selection-parameters">
+   Using selection parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-selection-within-a-condition">
+   Using a selection within a condition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-selection-to-filter-the-data">
+   Using a selection to filter the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limitations">
+   Limitations
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="parameters-variables-and-selections">
+<span id="user-guide-interactions2"></span><h1>Parameters: Variables and Selections<a class="headerlink" href="#parameters-variables-and-selections" title="Permalink to this headline">¶</a></h1>
+<p>Interactivity in Altair is built around <em>parameters</em>, of which there are two types: variables and selections.  We introduce these concepts through a series examples.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This material was changed considerably with the release of Altair 5.  In particular, Altair 4 had selections but not variables, and the term <code class="docutils literal notranslate"><span class="pre">parameter</span></code> first appeared in Altair 5.</p>
+</div>
+<section id="basic-example-using-a-variable">
+<span id="basic-variable"></span><h2>Basic Example: Using a variable<a class="headerlink" href="#basic-example-using-a-variable" title="Permalink to this headline">¶</a></h2>
+<p>Here is a simple scatter-plot created from the <code class="docutils literal notranslate"><span class="pre">cars</span></code> dataset:</p>
+<div class="highlight-python notranslate" id="interactions2-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">cars</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="o">.</span><span class="n">url</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Miles_per_Gallon:Q&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Horsepower:Q&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Origin:N&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="interactions2-rst-altair-plot-0">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": "circle", "encoding": {"color": {"field": "Origin", "type": "nominal"}, "x": {"field": "Miles_per_Gallon", "type": "quantitative"}, "y": {"field": "Horsepower", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#interactions2-rst-altair-plot-0', spec, opt).catch(console.err);
+  });
+</script>
+</div><p>We can create a variable parameter using <a class="reference internal" href="generated/api/altair.parameter.html#altair.parameter" title="altair.parameter"><code class="xref py py-func docutils literal notranslate"><span class="pre">parameter()</span></code></a>, and assign that parameter a default value of 0.1 using the <code class="docutils literal notranslate"><span class="pre">value</span></code> property, as follows:</p>
+<div class="highlight-python notranslate" id="interactions2-rst-altair-source-1"><div class="highlight"><pre><span></span><span class="n">op_var</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">parameter</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In order to use this variable in the chart specification, we explicitly add it to the chart using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.add_parameter()</span></code> method, and we can then reference the variable within the chart specification.  Here we set the opacity using our <code class="docutils literal notranslate"><span class="pre">op_var</span></code> parameter.</p>
+<div class="highlight-python notranslate" id="interactions2-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">cars</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="o">.</span><span class="n">url</span>
+
+<span class="n">op_var</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">parameter</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="n">op_var</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Miles_per_Gallon:Q&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Horsepower:Q&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Origin:N&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span>
+    <span class="n">op_var</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="interactions2-rst-altair-plot-2">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "circle", "opacity": {"expr": "parameter052"}}, "encoding": {"color": {"field": "Origin", "type": "nominal"}, "x": {"field": "Miles_per_Gallon", "type": "quantitative"}, "y": {"field": "Horsepower", "type": "quantitative"}}, "params": [{"name": "parameter052", "value": 0.1}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#interactions2-rst-altair-plot-2', spec, opt).catch(console.err);
+  });
+</script>
+</div><p>It’s reasonable to ask whether all this effort is necessary.  Here is a more natural way to accomplish the same thing.  We avoid the use of both <code class="xref py py-func docutils literal notranslate"><span class="pre">alt.parameter()</span></code> and <code class="docutils literal notranslate"><span class="pre">add_parameter</span></code>.</p>
+<div class="highlight-python notranslate" id="interactions2-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">cars</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="o">.</span><span class="n">url</span>
+
+<span class="n">op_var2</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="n">op_var2</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Miles_per_Gallon:Q&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Horsepower:Q&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Origin:N&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="interactions2-rst-altair-plot-3">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "circle", "opacity": 0.1}, "encoding": {"color": {"field": "Origin", "type": "nominal"}, "x": {"field": "Miles_per_Gallon", "type": "quantitative"}, "y": {"field": "Horsepower", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#interactions2-rst-altair-plot-3', spec, opt).catch(console.err);
+  });
+</script>
+</div><p>The benefit of using <code class="xref py py-func docutils literal notranslate"><span class="pre">alt.parameter()</span></code> doesn’t become apparent until we incorporate an additional component, such as in the following, where we use the <code class="docutils literal notranslate"><span class="pre">bind</span></code> property of the parameter, so that the parameter becomes bound to an input element.  In this example, that input element is a slider widget.</p>
+<div class="highlight-python notranslate" id="interactions2-rst-altair-source-4"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">cars</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="o">.</span><span class="n">url</span>
+
+<span class="n">slider</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">binding_range</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;opacity:&#39;</span><span class="p">)</span>
+<span class="n">op_var</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">parameter</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="n">slider</span><span class="p">)</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="n">op_var</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Miles_per_Gallon:Q&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Horsepower:Q&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Origin:N&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span>
+    <span class="n">op_var</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="interactions2-rst-altair-plot-4">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "circle", "opacity": {"expr": "parameter053"}}, "encoding": {"color": {"field": "Origin", "type": "nominal"}, "x": {"field": "Miles_per_Gallon", "type": "quantitative"}, "y": {"field": "Horsepower", "type": "quantitative"}}, "params": [{"name": "parameter053", "bind": {"input": "range", "max": 1, "min": 0, "name": "opacity:", "step": 0.05}, "value": 0.1}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#interactions2-rst-altair-plot-4', spec, opt).catch(console.err);
+  });
+</script>
+</div><p>Now we can dynamically change the opacity of the points in our chart using the slider.  A noteworthy aspect of this chart is that these effects are controlled entirely within your web browser.  Once the Vega-Lite chart specification has been created by Altair, the result is an interactive chart, and that interactivity no longer requires a running Python environment.</p>
+<p>The above example includes some aspects which occur frequently when creating interactive charts in Altair:</p>
+<ul class="simple">
+<li><p>Creating a variable parameter using <a class="reference internal" href="generated/api/altair.parameter.html#altair.parameter" title="altair.parameter"><code class="xref py py-func docutils literal notranslate"><span class="pre">parameter()</span></code></a>.</p></li>
+<li><p>Attaching the parameter to a chart using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.add_parameter()</span></code> method.</p></li>
+<li><p>Binding the parameter to an input widget using the parameter’s <code class="docutils literal notranslate"><span class="pre">bind</span></code> property.  (In the above example, the input widget is a slider widget.)</p></li>
+</ul>
+<p>Some further aspects that we will see below include:</p>
+<ul class="simple">
+<li><p>Creating a <em>selection</em> parameter.</p></li>
+<li><p>Using a parameter within a <a class="reference internal" href="generated/api/altair.condition.html#altair.condition" title="altair.condition"><code class="xref py py-func docutils literal notranslate"><span class="pre">condition()</span></code></a>.</p></li>
+<li><p>Using a parameter within a <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.transform_filter()</span></code>.</p></li>
+</ul>
+</section>
+<section id="using-selection-parameters">
+<h2>Using selection parameters<a class="headerlink" href="#using-selection-parameters" title="Permalink to this headline">¶</a></h2>
+<p>The basic syntax for adding a selection parameter to a chart is similar to the syntax for a variable parameter.  Instead of creating the parameter using <code class="docutils literal notranslate"><span class="pre">alt.parameter</span></code>, we will typically use <code class="docutils literal notranslate"><span class="pre">alt.selection_interval</span></code> or <code class="docutils literal notranslate"><span class="pre">alt.selection_point</span></code>.  Here is a basic example, again using the <code class="docutils literal notranslate"><span class="pre">cars</span></code> dataset:</p>
+<div class="highlight-python notranslate" id="interactions2-rst-altair-source-5"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">cars</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="o">.</span><span class="n">url</span>
+
+<span class="n">brush</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_interval</span><span class="p">()</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Miles_per_Gallon:Q&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Horsepower:Q&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Origin:N&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span>
+    <span class="n">brush</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="interactions2-rst-altair-plot-5">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": "circle", "encoding": {"color": {"field": "Origin", "type": "nominal"}, "x": {"field": "Miles_per_Gallon", "type": "quantitative"}, "y": {"field": "Horsepower", "type": "quantitative"}}, "params": [{"name": "parameter054", "select": {"type": "interval"}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#interactions2-rst-altair-plot-5', spec, opt).catch(console.err);
+  });
+</script>
+</div><p>If you click and drag on the above chart, you will see that the corresponding region gets highlighted.</p>
+<p>So far this example is very similar to what we did in the <a class="reference internal" href="#basic-variable"><span class="std std-ref">variable example</span></a>.  Here we have done two things: we created a selection parameter using <code class="docutils literal notranslate"><span class="pre">brush</span> <span class="pre">=</span> <span class="pre">alt.selection_interval()</span></code>, and we attached that parameter to the chart using <code class="docutils literal notranslate"><span class="pre">add_parameter</span></code>.</p>
+<p>The line <code class="docutils literal notranslate"><span class="pre">brush</span> <span class="pre">=</span> <span class="pre">alt.selection_interval()</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">brush</span> <span class="pre">=</span> <span class="pre">alt.parameter(select=&quot;interval&quot;)</span></code>; we will typically use the <code class="docutils literal notranslate"><span class="pre">selection_interval</span></code> version, because it is shorter and because it matches the syntax that was used in Altair 4.</p>
+<p>Typically selection parameters will be used in conjunction with <code class="docutils literal notranslate"><span class="pre">condition</span></code> or with <code class="docutils literal notranslate"><span class="pre">transform_filter</span></code>.  Here are some possibilities.</p>
+</section>
+<section id="using-a-selection-within-a-condition">
+<h2>Using a selection within a condition<a class="headerlink" href="#using-a-selection-within-a-condition" title="Permalink to this headline">¶</a></h2>
+<p>In the following example, we are using the selection parameter <code class="docutils literal notranslate"><span class="pre">brush</span></code> as a <em>predicate</em> (something that evaluates as <cite>True</cite> or <cite>False</cite>).  This is controlled by the line <code class="docutils literal notranslate"><span class="pre">color=alt.condition(brush,</span> <span class="pre">'Origin:N',</span> <span class="pre">alt.value('lightgray'))</span></code>.  Data points which fall within the selection evaluate as <code class="docutils literal notranslate"><span class="pre">True</span></code>, and data points which fall outside the selection evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code>.  The <code class="docutils literal notranslate"><span class="pre">'Origin:N'</span></code> specifies how to color the points which fall within the selection, and the <code class="docutils literal notranslate"><span class="pre">alt.value('lightgray')</span></code> specifies that the outside points should be given a constant color value.</p>
+<div class="highlight-python notranslate" id="interactions2-rst-altair-source-6"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">cars</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="o">.</span><span class="n">url</span>
+
+<span class="n">brush</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_interval</span><span class="p">()</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Miles_per_Gallon:Q&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Horsepower:Q&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">brush</span><span class="p">,</span> <span class="s1">&#39;Origin:N&#39;</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;lightgray&#39;</span><span class="p">))</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span>
+    <span class="n">brush</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="interactions2-rst-altair-plot-6">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": "circle", "encoding": {"color": {"condition": {"field": "Origin", "type": "nominal", "param": "parameter055"}, "value": "lightgray"}, "x": {"field": "Miles_per_Gallon", "type": "quantitative"}, "y": {"field": "Horsepower", "type": "quantitative"}}, "params": [{"name": "parameter055", "select": {"type": "interval"}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#interactions2-rst-altair-plot-6', spec, opt).catch(console.err);
+  });
+</script>
+</div></section>
+<section id="using-a-selection-to-filter-the-data">
+<h2>Using a selection to filter the data<a class="headerlink" href="#using-a-selection-to-filter-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Once you are comfortable with using a parameter within <code class="docutils literal notranslate"><span class="pre">alt.condition</span></code>, using a parameter within <code class="docutils literal notranslate"><span class="pre">transform_filter</span></code> works in much the same way.  For example, in <code class="docutils literal notranslate"><span class="pre">transform_filter(brush)</span></code>, we are again using the selection parameter <code class="docutils literal notranslate"><span class="pre">brush</span></code> as a predicate.  Data points which evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code> (i.e., data points which lie within the selection) are kept, and data points which evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code> are removed.</p>
+<p>It is not possible to both select and filter in the same chart, so typically this functionality will be used when at least two sub-charts are present.  In the following example, we attach the selection parameter to the left chart, and then filter data using the selection parameter on the right chart.  We specify explicit domains for the right chart so that the positions of the points remain steady.</p>
+<div class="highlight-python notranslate" id="interactions2-rst-altair-source-7"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">cars</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="o">.</span><span class="n">url</span>
+
+<span class="n">brush</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_interval</span><span class="p">()</span>
+
+<span class="n">c1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Horsepower:Q&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Miles_per_Gallon:Q&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="n">brush</span><span class="p">)</span>
+
+<span class="n">c2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;Acceleration:Q&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">])),</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;Displacement:Q&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">])),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="n">brush</span><span class="p">)</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="interactions2-rst-altair-plot-7">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"mark": "point", "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "params": [{"name": "parameter056", "select": {"type": "interval"}}]}, {"mark": "point", "encoding": {"x": {"field": "Acceleration", "scale": {"domain": [0, 25]}, "type": "quantitative"}, "y": {"field": "Displacement", "scale": {"domain": [0, 500]}, "type": "quantitative"}}, "transform": [{"filter": {"param": "parameter056"}}]}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#interactions2-rst-altair-plot-7', spec, opt).catch(console.err);
+  });
+</script>
+</div></section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<p>Some possible use cases for the above interactivity are not currently supported by Vega-Lite, and hence are not currently supported by Altair.  Here are some examples.</p>
+<ol class="arabic simple">
+<li><p>If we are using a <code class="docutils literal notranslate"><span class="pre">selection_point</span></code>, it would be natural to want to return information about the chosen data point, and then process that information using Python.  This is not currently possible (and as of December 2021 it does not seem likely to become possible any time soon), so any data processing will have to be handled using tools such as <code class="docutils literal notranslate"><span class="pre">transform_calculate</span></code>, etc.</p></li>
+<li><p>It is not possible to use an encoding such as <code class="docutils literal notranslate"><span class="pre">y=column_variable</span></code> to then dynamically display different charts based on different column choices.  Similar functionality could be created using for example <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code>, but the resulting interactivity would be controlled by Python, and would not work for example as a stand-alone web page.  The underlying reason this is not possible is that in Vega-Lite, the <code class="docutils literal notranslate"><span class="pre">field</span></code> property does not accept a parameter as value; see the <a class="reference external" href="https://vega.github.io/vega-lite/docs/field.html">field Vega-Lite documentation</a>.  A first approximation of a workaround is given in the following example.</p></li>
+</ol>
+<div class="highlight-python notranslate" id="interactions2-rst-altair-source-8"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;col0&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="s1">&#39;col1&#39;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;ABAA&#39;</span><span class="p">),</span> <span class="s1">&#39;col2&#39;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;CDDC&#39;</span><span class="p">)})</span>
+<span class="n">df_long</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;col0&#39;</span><span class="p">],</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;column&#39;</span><span class="p">)</span>
+
+<span class="n">col_dropdown</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">binding_select</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;column&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">col_param</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">parameter</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">col_dropdown</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ColumnParam&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;col1&#39;</span><span class="p">)</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_long</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;value:N&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;count()&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>
+    <span class="s2">&quot;datum.column == ColumnParam&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span>
+    <span class="n">col_param</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="interactions2-rst-altair-plot-8">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-781067a2eb23ae42b4784c33cf6e2fb6"}, "mark": "bar", "encoding": {"x": {"field": "value", "type": "nominal"}, "y": {"aggregate": "count", "type": "quantitative"}}, "params": [{"name": "ColumnParam", "bind": {"input": "select", "options": ["col1", "col2"]}, "value": "col1"}], "transform": [{"filter": "datum.column == ColumnParam"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-781067a2eb23ae42b4784c33cf6e2fb6": [{"col0": 0, "column": "col1", "value": "A"}, {"col0": 1, "column": "col1", "value": "B"}, {"col0": 2, "column": "col1", "value": "A"}, {"col0": 3, "column": "col1", "value": "A"}, {"col0": 0, "column": "col2", "value": "C"}, {"col0": 1, "column": "col2", "value": "D"}, {"col0": 2, "column": "col2", "value": "D"}, {"col0": 3, "column": "col2", "value": "C"}]}};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#interactions2-rst-altair-plot-8', spec, opt).catch(console.err);
+  });
+</script>
+</div></section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="interactions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Interactive Charts: Bindings, Selections, Conditions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="configuration.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Top-Level Chart Configuration</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2016-2022, Altair Developers.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

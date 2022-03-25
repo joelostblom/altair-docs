@@ -37,13 +37,13 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Altair Internals: Understanding the Library" href="internals.html" />
-    <link rel="prev" title="Top-Level Chart Configuration" href="configuration.html" />
+    <link rel="prev" title="Customizing Visualizations" href="customization.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -290,6 +290,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="interactions2.html">
+   Parameters: Variables and Selections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Top-Level Chart Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="compound_charts.html">
    Compound Charts: Layer, HConcat, VConcat, Repeat, Facet
   </a>
@@ -442,33 +452,33 @@ by passing a filename with a <code class="docutils literal notranslate"><span cl
 </pre></div>
 </div>
 <p>The contents of the resulting file will look something like this:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;$schema&quot;</span><span class="p">:</span> <span class="s2">&quot;https://vega.github.io/schema/vega-lite/v4.json&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;config&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;view&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;continuousHeight&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
-      <span class="nt">&quot;continuousWidth&quot;</span><span class="p">:</span> <span class="mi">400</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://vega.github.io/vega-datasets/data/cars.json&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;Origin&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;nominal&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;Horsepower&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;quantitative&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;Miles_per_Gallon&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;quantitative&quot;</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;mark&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vega.github.io/schema/vega-lite/v4.json&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;view&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;continuousHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;continuousWidth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vega.github.io/vega-datasets/data/cars.json&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Origin&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nominal&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Horsepower&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;quantitative&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Miles_per_Gallon&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;quantitative&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;mark&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;point&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This JSON can then be inserted into any web page using the <a class="reference external" href="https://github.com/vega/vega-embed">vegaEmbed</a> library.</p>
@@ -582,11 +592,11 @@ to contain more pixels at a given resolution.</p>
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="configuration.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="customization.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Top-Level Chart Configuration</p>
+            <p class="prev-next-title">Customizing Visualizations</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="internals.html" title="next page">

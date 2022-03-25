@@ -37,7 +37,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -209,7 +209,7 @@ selector will select the entire area instead of just one part of it.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "area", "color": "goldenrod", "opacity": 0.3}, "encoding": {"x": {"field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "type": "quantitative"}}, "selection": {"selector023": {"type": "interval", "encodings": ["x"], "empty": "all"}}}, {"mark": {"type": "area", "color": "goldenrod"}, "encoding": {"x": {"field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "type": "quantitative"}}, "transform": [{"filter": {"selection": "selector023"}}]}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "area", "color": "goldenrod", "opacity": 0.3}, "encoding": {"x": {"field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "type": "quantitative"}}, "params": [{"name": "parameter023", "select": {"type": "interval", "encodings": ["x"]}}]}, {"mark": {"type": "area", "color": "goldenrod"}, "encoding": {"x": {"field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "type": "quantitative"}}, "transform": [{"filter": {"param": "parameter023", "empty": true}}]}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

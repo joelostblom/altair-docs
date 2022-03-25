@@ -37,7 +37,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -287,6 +287,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="interactions.html">
    Interactive Charts: Bindings, Selections, Conditions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interactions2.html">
+   Parameters: Variables and Selections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Top-Level Chart Configuration
   </a>
  </li>
  <li class="toctree-l1">
@@ -571,7 +581,7 @@ arguments to represent points as red semi-transparent filled circles:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "circle", "color": "red", "opacity": 0.3}, "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "circle", "color": "red", "opacity": 0.3}, "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -609,7 +619,7 @@ arguments to represent points as red semi-transparent filled circles:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-f86cb52e575d8a4984e91e242408c1f2"}, "mark": {"type": "image", "height": 50, "width": 50}, "encoding": {"url": {"field": "img", "type": "nominal"}, "x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-f86cb52e575d8a4984e91e242408c1f2": [{"x": 0.5, "y": 0.5, "img": "https://vega.github.io/vega-datasets/data/ffox.png"}, {"x": 1.5, "y": 1.5, "img": "https://vega.github.io/vega-datasets/data/gimp.png"}, {"x": 2.5, "y": 2.5, "img": "https://vega.github.io/vega-datasets/data/7zip.png"}]}};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-f86cb52e575d8a4984e91e242408c1f2"}, "mark": {"type": "image", "height": 50, "width": 50}, "encoding": {"url": {"field": "img", "type": "nominal"}, "x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-f86cb52e575d8a4984e91e242408c1f2": [{"x": 0.5, "y": 0.5, "img": "https://vega.github.io/vega-datasets/data/ffox.png"}, {"x": 1.5, "y": 1.5, "img": "https://vega.github.io/vega-datasets/data/gimp.png"}, {"x": 2.5, "y": 2.5, "img": "https://vega.github.io/vega-datasets/data/7zip.png"}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -643,7 +653,7 @@ arguments to represent points as red semi-transparent filled circles:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": "boxplot", "encoding": {"y": {"field": "people", "type": "quantitative"}}, "height": 300, "width": 200, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": "boxplot", "encoding": {"y": {"field": "people", "type": "quantitative"}}, "height": 300, "width": 200, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -670,7 +680,7 @@ arguments to represent points as red semi-transparent filled circles:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": "boxplot", "encoding": {"x": {"field": "age", "type": "ordinal"}, "y": {"field": "people", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": "boxplot", "encoding": {"x": {"field": "age", "type": "ordinal"}, "y": {"field": "people", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -698,7 +708,7 @@ Users can adjust this threshold using the <code class="docutils literal notransl
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": {"type": "boxplot", "extent": 3.0}, "encoding": {"x": {"field": "age", "type": "ordinal"}, "y": {"field": "people", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": {"type": "boxplot", "extent": 3.0}, "encoding": {"x": {"field": "age", "type": "ordinal"}, "y": {"field": "people", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -725,7 +735,7 @@ Users can adjust this threshold using the <code class="docutils literal notransl
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": {"type": "boxplot", "extent": "min-max"}, "encoding": {"x": {"field": "age", "type": "ordinal"}, "y": {"field": "people", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": {"type": "boxplot", "extent": "min-max"}, "encoding": {"x": {"field": "age", "type": "ordinal"}, "y": {"field": "people", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -810,7 +820,11 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 <td><p>anyOf(<a class="reference internal" href="generated/core/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="generated/core/altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"><p>Default color.</p>
 <p><strong>Default value:</strong> <span style="color: #4682b4;">■</span> <code class="docutils literal notranslate"><span class="pre">&quot;#4682b4&quot;</span></code></p>
-<p><strong>Note:</strong> - This property cannot be used in a <a class="reference external" href="https://vega.github.io/vega-lite/docs/mark.html#style-config">style config</a>. - The <code class="docutils literal notranslate"><span class="pre">fill</span></code> and <code class="docutils literal notranslate"><span class="pre">stroke</span></code> properties have higher precedence than <code class="docutils literal notranslate"><span class="pre">color</span></code> and will override <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p>
+<p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p>This property cannot be used in a <a class="reference external" href="https://vega.github.io/vega-lite/docs/mark.html#style-config">style config</a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">fill</span></code> and <code class="docutils literal notranslate"><span class="pre">stroke</span></code> properties have higher precedence than <code class="docutils literal notranslate"><span class="pre">color</span></code> and will override <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p></li>
+</ul>
 </td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>continuousBandSize</p></td>
@@ -834,7 +848,8 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 <tr class="row-even"><td class="vl-prop"><p>cornerRadiusEnd</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"><ul class="simple">
-<li><p>For vertical bars, top-left and top-right corner radius. - For horizontal bars, top-right and bottom-right corner radius.</p></li>
+<li><p>For vertical bars, top-left and top-right corner radius.</p></li>
+<li><p>For horizontal bars, top-right and bottom-right corner radius.</p></li>
 </ul>
 </td>
 </tr>
@@ -859,7 +874,7 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 <td class="vl-decsr"></td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>discreteBandSize</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.RelativeBandSize.html#altair.RelativeBandSize" title="altair.RelativeBandSize"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelativeBandSize</span></code></a>)</p></td>
 <td class="vl-decsr"><p>The default size of the bars with discrete dimensions. If unspecified, the default size is  <code class="docutils literal notranslate"><span class="pre">step-2</span></code>, which provides 2 pixel offset between bars.</p></td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>dx</p></td>
@@ -908,8 +923,13 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 <td class="vl-decsr"></td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>height</p></td>
-<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
-<td class="vl-decsr"></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>, <a class="reference internal" href="generated/core/altair.RelativeBandSize.html#altair.RelativeBandSize" title="altair.RelativeBandSize"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelativeBandSize</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Height of the marks.  One of:</p>
+<ul class="simple">
+<li><p>A number representing a fixed pixel height.</p></li>
+<li><p>A relative band size definition.  For example, <code class="docutils literal notranslate"><span class="pre">{band:</span> <span class="pre">0.5}</span></code> represents half of the band</p></li>
+</ul>
+</td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>href</p></td>
 <td><p>anyOf(<a class="reference internal" href="generated/core/altair.URI.html#altair.URI" title="altair.URI"><code class="xref py py-class docutils literal notranslate"><span class="pre">URI</span></code></a>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
@@ -917,7 +937,9 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>innerRadius</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
-<td class="vl-decsr"><p>The inner radius in pixels of arc marks. <code class="docutils literal notranslate"><span class="pre">innerRadius</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">radius2</span></code>.</p></td>
+<td class="vl-decsr"><p>The inner radius in pixels of arc marks. <code class="docutils literal notranslate"><span class="pre">innerRadius</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">radius2</span></code>.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>interpolate</p></td>
 <td><p>anyOf(<a class="reference internal" href="generated/core/altair.Interpolate.html#altair.Interpolate" title="altair.Interpolate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interpolate</span></code></a>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
@@ -925,7 +947,12 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>invalid</p></td>
 <td><p>[‘filter’, None]</p></td>
-<td class="vl-decsr"><p>Defines how Vega-Lite should handle marks for invalid values (<code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">NaN</span></code>). - If set to <code class="docutils literal notranslate"><span class="pre">&quot;filter&quot;</span></code> (default), all data items with null values will be skipped (for line, trail, and area marks) or filtered (for other marks). - If <code class="docutils literal notranslate"><span class="pre">null</span></code>, all data items are included. In this case, invalid values will be interpreted as zeroes.</p></td>
+<td class="vl-decsr"><p>Defines how Vega-Lite should handle marks for invalid values (<code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">NaN</span></code>).</p>
+<ul class="simple">
+<li><p>If set to <code class="docutils literal notranslate"><span class="pre">&quot;filter&quot;</span></code> (default), all data items with null values will be skipped (for line, trail, and area marks) or filtered (for other marks).</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">null</span></code>, all data items are included. In this case, invalid values will be interpreted as zeroes.</p></li>
+</ul>
+</td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>limit</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
@@ -961,11 +988,19 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>orient</p></td>
 <td><p><a class="reference internal" href="generated/core/altair.Orientation.html#altair.Orientation" title="altair.Orientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orientation</span></code></a></p></td>
-<td class="vl-decsr"><p>The orientation of a non-stacked bar, tick, area, and line charts. The value is either horizontal (default) or vertical. - For bar, rule and tick, this determines whether the size of the bar and tick should be applied to x or y dimension. - For area, this property determines the orient property of the Vega output. - For line and trail marks, this property determines the sort order of the points in the line if <code class="docutils literal notranslate"><span class="pre">config.sortLineBy</span></code> is not specified. For stacked charts, this is always determined by the orientation of the stack; therefore explicitly specified value will be ignored.</p></td>
+<td class="vl-decsr"><p>The orientation of a non-stacked bar, tick, area, and line charts. The value is either horizontal (default) or vertical.</p>
+<ul class="simple">
+<li><p>For bar, rule and tick, this determines whether the size of the bar and tick should be applied to x or y dimension.</p></li>
+<li><p>For area, this property determines the orient property of the Vega output.</p></li>
+<li><p>For line and trail marks, this property determines the sort order of the points in the line if <code class="docutils literal notranslate"><span class="pre">config.sortLineBy</span></code> is not specified. For stacked charts, this is always determined by the orientation of the stack; therefore explicitly specified value will be ignored.</p></li>
+</ul>
+</td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>outerRadius</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
-<td class="vl-decsr"><p>The outer radius in pixels of arc marks. <code class="docutils literal notranslate"><span class="pre">outerRadius</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">radius</span></code>.</p></td>
+<td class="vl-decsr"><p>The outer radius in pixels of arc marks. <code class="docutils literal notranslate"><span class="pre">outerRadius</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">radius</span></code>.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>padAngle</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
@@ -986,11 +1021,14 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"><p>For arc mark, the primary (outer) radius in pixels.</p>
 <p>For text marks, polar coordinate radial offset, in pixels, of the text from the origin determined by the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> properties.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">min(plot_width,</span> <span class="pre">plot_height)/2</span></code></p>
 </td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>radius2</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
-<td class="vl-decsr"><p>The secondary (inner) radius in pixels of arc marks.</p></td>
+<td class="vl-decsr"><p>The secondary (inner) radius in pixels of arc marks.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>radius2Offset</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
@@ -1006,8 +1044,19 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>size</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
-<td class="vl-decsr"><p>Default size for marks. - For <code class="docutils literal notranslate"><span class="pre">point</span></code>/<code class="docutils literal notranslate"><span class="pre">circle</span></code>/<code class="docutils literal notranslate"><span class="pre">square</span></code>, this represents the pixel area of the marks. Note that this value sets the area of the symbol; the side lengths will increase with the square root of this value. - For <code class="docutils literal notranslate"><span class="pre">bar</span></code>, this represents the band size of the bar, in pixels. - For <code class="docutils literal notranslate"><span class="pre">text</span></code>, this represents the font size, in pixels.</p>
-<p><strong>Default value:</strong> - <code class="docutils literal notranslate"><span class="pre">30</span></code> for point, circle, square marks; width/height’s <code class="docutils literal notranslate"><span class="pre">step</span></code> - <code class="docutils literal notranslate"><span class="pre">2</span></code> for bar marks with discrete dimensions; - <code class="docutils literal notranslate"><span class="pre">5</span></code> for bar marks with continuous dimensions; - <code class="docutils literal notranslate"><span class="pre">11</span></code> for text marks.</p>
+<td class="vl-decsr"><p>Default size for marks.</p>
+<ul class="simple">
+<li><p>For <code class="docutils literal notranslate"><span class="pre">point</span></code>/<code class="docutils literal notranslate"><span class="pre">circle</span></code>/<code class="docutils literal notranslate"><span class="pre">square</span></code>, this represents the pixel area of the marks. Note that this value sets the area of the symbol; the side lengths will increase with the square root of this value.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">bar</span></code>, this represents the band size of the bar, in pixels.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">text</span></code>, this represents the font size, in pixels.</p></li>
+</ul>
+<p><strong>Default value:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">30</span></code> for point, circle, square marks; width/height’s <code class="docutils literal notranslate"><span class="pre">step</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> for bar marks with discrete dimensions;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">5</span></code> for bar marks with continuous dimensions;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code> for text marks.</p></li>
+</ul>
 </td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>smooth</p></td>
@@ -1092,19 +1141,21 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 <p><strong>Default value:</strong>  <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
 </td>
 </tr>
-<tr class="row-even"><td class="vl-prop"><p>timeUnitBand</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
-<td class="vl-decsr"><p>Default relative band size for a time unit. If set to <code class="docutils literal notranslate"><span class="pre">1</span></code>, the bandwidth of the marks will be equal to the time unit band step. If set to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, bandwidth of the marks will be half of the time unit band step.</p></td>
-</tr>
-<tr class="row-odd"><td class="vl-prop"><p>timeUnitBandPosition</p></td>
+<tr class="row-even"><td class="vl-prop"><p>timeUnitBandPosition</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
 <td class="vl-decsr"><p>Default relative band position for a time unit. If set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, the marks will be positioned at the beginning of the time unit band step. If set to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, the marks will be positioned in the middle of the time unit band step.</p></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>timeUnitBandSize</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-decsr"><p>Default relative band size for a time unit. If set to <code class="docutils literal notranslate"><span class="pre">1</span></code>, the bandwidth of the marks will be equal to the time unit band step. If set to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, bandwidth of the marks will be half of the time unit band step.</p></td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>tooltip</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="generated/core/altair.TooltipContent.html#altair.TooltipContent" title="altair.TooltipContent"><code class="xref py py-class docutils literal notranslate"><span class="pre">TooltipContent</span></code></a>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>, <code class="docutils literal notranslate"><span class="pre">null</span></code>)</p></td>
 <td class="vl-decsr"><p>The tooltip text string to show upon mouse hover or an object defining which fields should the tooltip be derived from.</p>
 <ul class="simple">
-<li><p>If <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">{&quot;content&quot;:</span> <span class="pre">&quot;encoding&quot;}</span></code>, then all fields from <code class="docutils literal notranslate"><span class="pre">encoding</span></code> will be used. - If <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> is <code class="docutils literal notranslate"><span class="pre">{&quot;content&quot;:</span> <span class="pre">&quot;data&quot;}</span></code>, then all fields that appear in the highlighted data point will be used. - If set to <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>, then no tooltip will be used.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">{&quot;content&quot;:</span> <span class="pre">&quot;encoding&quot;}</span></code>, then all fields from <code class="docutils literal notranslate"><span class="pre">encoding</span></code> will be used.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> is <code class="docutils literal notranslate"><span class="pre">{&quot;content&quot;:</span> <span class="pre">&quot;data&quot;}</span></code>, then all fields that appear in the highlighted data point will be used.</p></li>
+<li><p>If set to <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>, then no tooltip will be used.</p></li>
 </ul>
 <p>See the <a class="reference external" href="https://vega.github.io/vega-lite/docs/tooltip.html"><code class="docutils literal notranslate"><span class="pre">tooltip</span></code></a> documentation for a detailed discussion about tooltip  in Vega-Lite.</p>
 <p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">null</span></code></p>
@@ -1119,8 +1170,13 @@ associated <a class="reference internal" href="generated/core/altair.MarkDef.htm
 <td class="vl-decsr"></td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>width</p></td>
-<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
-<td class="vl-decsr"></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>, <a class="reference internal" href="generated/core/altair.RelativeBandSize.html#altair.RelativeBandSize" title="altair.RelativeBandSize"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelativeBandSize</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Width of the marks.  One of:</p>
+<ul class="simple">
+<li><p>A number representing a fixed pixel width.</p></li>
+<li><p>A relative band size definition.  For example, <code class="docutils literal notranslate"><span class="pre">{band:</span> <span class="pre">0.5}</span></code> represents half of the band.</p></li>
+</ul>
+</td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>x</p></td>
 <td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>

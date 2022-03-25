@@ -37,7 +37,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -290,6 +290,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../interactions2.html">
+   Parameters: Variables and Selections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../configuration.html">
+   Top-Level Chart Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../compound_charts.html">
    Compound Charts: Layer, HConcat, VConcat, Repeat, Facet
   </a>
@@ -457,7 +467,7 @@ data directly, the line skips the missing entries:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -488,7 +498,7 @@ lightly in the background for reference):</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "impute": {"value": 0}, "type": "quantitative"}}}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "impute": {"value": 0}, "type": "quantitative"}}}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -512,7 +522,7 @@ lightly in the background for reference):</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "impute": {"method": "mean"}, "type": "quantitative"}}}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "impute": {"method": "mean"}, "type": "quantitative"}}}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -546,7 +556,7 @@ transform. For example, here is the equivalent of the above two charts:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "groupby": ["variable"], "value": 0}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "groupby": ["variable"], "value": 0}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -574,7 +584,7 @@ transform. For example, here is the equivalent of the above two charts:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "groupby": ["variable"], "method": "mean"}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "groupby": ["variable"], "method": "mean"}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -608,7 +618,7 @@ side:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "frame": [-1, 1], "groupby": ["variable"], "method": "mean"}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "frame": [-1, 1], "groupby": ["variable"], "method": "mean"}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -636,7 +646,7 @@ class, which has the following options:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td class="vl-prop"><p>frame</p></td>
-<td><p>array(any)</p></td>
+<td><p>array([null, number])</p></td>
 <td class="vl-decsr"><p>A frame specification as a two-element array used to control the window over which the specified method is applied. The array entries should either be a number indicating the offset from the current data object, or null to indicate unbounded rows preceding or following the current data object. For example, the value <code class="docutils literal notranslate"><span class="pre">[-5,</span> <span class="pre">5]</span></code> indicates that the window should include five objects preceding and five objects following the current object.</p>
 <p><strong>Default value:</strong>:  <code class="docutils literal notranslate"><span class="pre">[null,</span> <span class="pre">null]</span></code> indicating that the window includes all objects.</p>
 </td>

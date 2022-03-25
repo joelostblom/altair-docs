@@ -37,7 +37,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -290,6 +290,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../interactions2.html">
+   Parameters: Variables and Selections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../configuration.html">
+   Top-Level Chart Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../compound_charts.html">
    Compound Charts: Layer, HConcat, VConcat, Repeat, Facet
   </a>
@@ -425,7 +435,7 @@ dataset:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/movies.json"}, "mark": "area", "encoding": {"x": {"field": "IMDB_Rating", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "transform": [{"density": "IMDB_Rating", "as": ["IMDB_Rating", "density"]}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/movies.json"}, "mark": "area", "encoding": {"x": {"field": "IMDB_Rating", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "transform": [{"density": "IMDB_Rating", "as": ["IMDB_Rating", "density"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -465,7 +475,7 @@ argument. Here we split the above density computation across movie genres:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/movies.json"}, "facet": {"field": "Major_Genre", "type": "nominal"}, "spec": {"mark": "area", "encoding": {"x": {"field": "IMDB_Rating", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "height": 80, "transform": [{"filter": "isValid(datum.Major_Genre)"}, {"density": "IMDB_Rating", "extent": [1, 10], "groupby": ["Major_Genre"], "as": ["IMDB_Rating", "density"]}], "width": 120}, "columns": 4, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/movies.json"}, "facet": {"field": "Major_Genre", "type": "nominal"}, "spec": {"mark": "area", "encoding": {"x": {"field": "IMDB_Rating", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "height": 80, "transform": [{"filter": "isValid(datum.Major_Genre)"}, {"density": "IMDB_Rating", "extent": [1, 10], "groupby": ["Major_Genre"], "as": ["IMDB_Rating", "density"]}], "width": 120}, "columns": 4, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -492,7 +502,7 @@ argument. Here we split the above density computation across movie genres:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td class="vl-prop"><p>as</p></td>
-<td><p>array(any)</p></td>
+<td><p>array(<a class="reference internal" href="../generated/core/altair.FieldName.html#altair.FieldName" title="altair.FieldName"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldName</span></code></a>)</p></td>
 <td class="vl-decsr"><p>The output fields for the sample value and corresponding density estimate.</p>
 <p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">[&quot;value&quot;,</span> <span class="pre">&quot;density&quot;]</span></code></p>
 </td>
@@ -518,7 +528,7 @@ argument. Here we split the above density computation across movie genres:</p>
 <td class="vl-decsr"><p>The data field for which to perform density estimation.</p></td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>extent</p></td>
-<td><p>array(any)</p></td>
+<td><p>array(<code class="docutils literal notranslate"><span class="pre">number</span></code>)</p></td>
 <td class="vl-decsr"><p>A [min, max] domain from which to sample the distribution. If unspecified, the extent will be determined by the observed minimum and maximum values of the density value field.</p></td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>groupby</p></td>
