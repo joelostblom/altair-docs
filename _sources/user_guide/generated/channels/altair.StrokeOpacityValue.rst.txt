@@ -27,4 +27,11 @@
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~StrokeOpacityValue.condition
+      ~StrokeOpacityValue.value
+   
    

@@ -27,4 +27,18 @@
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~YOffset.aggregate
+      ~YOffset.bandPosition
+      ~YOffset.bin
+      ~YOffset.field
+      ~YOffset.scale
+      ~YOffset.sort
+      ~YOffset.timeUnit
+      ~YOffset.title
+      ~YOffset.type
+   
    

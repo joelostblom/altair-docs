@@ -27,4 +27,14 @@
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~YOffsetDatum.bandPosition
+      ~YOffsetDatum.datum
+      ~YOffsetDatum.scale
+      ~YOffsetDatum.title
+      ~YOffsetDatum.type
+   
    

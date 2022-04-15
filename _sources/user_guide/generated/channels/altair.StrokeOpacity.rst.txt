@@ -27,4 +27,20 @@
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~StrokeOpacity.aggregate
+      ~StrokeOpacity.bandPosition
+      ~StrokeOpacity.bin
+      ~StrokeOpacity.condition
+      ~StrokeOpacity.field
+      ~StrokeOpacity.legend
+      ~StrokeOpacity.scale
+      ~StrokeOpacity.sort
+      ~StrokeOpacity.timeUnit
+      ~StrokeOpacity.title
+      ~StrokeOpacity.type
+   
    

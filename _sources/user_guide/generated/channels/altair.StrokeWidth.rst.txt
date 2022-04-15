@@ -27,4 +27,20 @@
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~StrokeWidth.aggregate
+      ~StrokeWidth.bandPosition
+      ~StrokeWidth.bin
+      ~StrokeWidth.condition
+      ~StrokeWidth.field
+      ~StrokeWidth.legend
+      ~StrokeWidth.scale
+      ~StrokeWidth.sort
+      ~StrokeWidth.timeUnit
+      ~StrokeWidth.title
+      ~StrokeWidth.type
+   
    

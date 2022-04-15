@@ -27,4 +27,14 @@
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~XOffsetDatum.bandPosition
+      ~XOffsetDatum.datum
+      ~XOffsetDatum.scale
+      ~XOffsetDatum.title
+      ~XOffsetDatum.type
+   
    

@@ -27,4 +27,15 @@
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~YError.aggregate
+      ~YError.bandPosition
+      ~YError.bin
+      ~YError.field
+      ~YError.timeUnit
+      ~YError.title
+   
    

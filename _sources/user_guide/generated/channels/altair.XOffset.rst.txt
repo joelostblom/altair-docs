@@ -27,4 +27,18 @@
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~XOffset.aggregate
+      ~XOffset.bandPosition
+      ~XOffset.bin
+      ~XOffset.field
+      ~XOffset.scale
+      ~XOffset.sort
+      ~XOffset.timeUnit
+      ~XOffset.title
+      ~XOffset.type
+   
    
