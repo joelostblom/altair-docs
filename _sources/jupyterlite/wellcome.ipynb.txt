@@ -62,18 +62,36 @@
   },
   {
    "cell_type": "markdown",
+   "id": "5bc9fd00-59e5-40ad-9352-8ab40aae09ff",
+   "metadata": {},
+   "source": [
+    "You can see which version of Altair we are running like so:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6fd2a34b-cafe-46e5-b84c-569b2fbff2cd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "alt.__version__"
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "49c79ccc-c2c6-4e62-b084-3fac20f56702",
    "metadata": {},
    "source": [
-    "Keep exploring the gallery examples via the menu to the left!"
+    "Keep exploring the gallery examples via the left sidebar!"
    ]
   }
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
+   "display_name": "Pyolite",
    "language": "python",
-   "name": "python3"
+   "name": "python"
   },
   "language_info": {
    "codemirror_mode": {
