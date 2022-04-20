@@ -27,14 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~FillDatum.bandPosition
-      ~FillDatum.condition
-      ~FillDatum.datum
-      ~FillDatum.title
-      ~FillDatum.type
-   
    

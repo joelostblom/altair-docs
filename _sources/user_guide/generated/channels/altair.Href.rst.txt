@@ -27,19 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Href.aggregate
-      ~Href.bandPosition
-      ~Href.bin
-      ~Href.condition
-      ~Href.field
-      ~Href.format
-      ~Href.formatType
-      ~Href.timeUnit
-      ~Href.title
-      ~Href.type
-   
    

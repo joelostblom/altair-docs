@@ -117,6 +117,12 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://joelostblom.github.io/altair-docs/lite/lab/">
+  Try online
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -208,7 +214,7 @@ of the other panels.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "repeat": {"column": ["distance", "delay", "time"]}, "spec": {"layer": [{"mark": "bar", "encoding": {"color": {"value": "#ddd"}, "x": {"bin": {"maxbins": 20}, "field": {"repeat": "column"}, "type": "quantitative"}, "y": {"aggregate": "count", "type": "quantitative"}}, "params": [{"name": "parameter006", "select": {"type": "interval", "encodings": ["x"]}}]}, {"mark": "bar", "encoding": {"x": {"bin": {"maxbins": 20}, "field": {"repeat": "column"}, "type": "quantitative"}, "y": {"aggregate": "count", "type": "quantitative"}}, "transform": [{"filter": {"param": "parameter006"}}]}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/flights-2k.json", "format": {"parse": {"date": "date"}}}, "height": 130, "transform": [{"calculate": "hours(datum.date)", "as": "time"}], "width": 160}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "repeat": {"column": ["distance", "delay", "time"]}, "spec": {"layer": [{"mark": "bar", "encoding": {"color": {"value": "#ddd"}, "x": {"bin": {"maxbins": 20}, "field": {"repeat": "column"}, "type": "quantitative"}, "y": {"aggregate": "count", "type": "quantitative"}}, "params": [{"name": "parameter008", "select": {"type": "interval", "encodings": ["x"]}}]}, {"mark": "bar", "encoding": {"x": {"bin": {"maxbins": 20}, "field": {"repeat": "column"}, "type": "quantitative"}, "y": {"aggregate": "count", "type": "quantitative"}}, "transform": [{"filter": {"param": "parameter008"}}]}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/flights-2k.json", "format": {"parse": {"date": "date"}}}, "height": 130, "transform": [{"calculate": "hours(datum.date)", "as": "time"}], "width": 160}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

@@ -27,15 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~XError2.aggregate
-      ~XError2.bandPosition
-      ~XError2.bin
-      ~XError2.field
-      ~XError2.timeUnit
-      ~XError2.title
-   
    

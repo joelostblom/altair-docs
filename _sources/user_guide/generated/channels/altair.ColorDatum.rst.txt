@@ -27,14 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~ColorDatum.bandPosition
-      ~ColorDatum.condition
-      ~ColorDatum.datum
-      ~ColorDatum.title
-      ~ColorDatum.type
-   
    

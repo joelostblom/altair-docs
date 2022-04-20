@@ -27,14 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~StrokeDatum.bandPosition
-      ~StrokeDatum.condition
-      ~StrokeDatum.datum
-      ~StrokeDatum.title
-      ~StrokeDatum.type
-   
    

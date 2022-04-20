@@ -27,10 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Theta2Value.value
-   
    

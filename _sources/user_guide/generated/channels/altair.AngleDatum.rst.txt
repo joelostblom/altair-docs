@@ -27,14 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~AngleDatum.bandPosition
-      ~AngleDatum.condition
-      ~AngleDatum.datum
-      ~AngleDatum.title
-      ~AngleDatum.type
-   
    

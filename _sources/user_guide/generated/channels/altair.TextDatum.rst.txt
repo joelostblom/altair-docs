@@ -27,16 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~TextDatum.bandPosition
-      ~TextDatum.condition
-      ~TextDatum.datum
-      ~TextDatum.format
-      ~TextDatum.formatType
-      ~TextDatum.title
-      ~TextDatum.type
-   
    

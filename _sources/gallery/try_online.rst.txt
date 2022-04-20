@@ -1,0 +1,6 @@
+Try Altair Online
+=================
+
+.. jupyterlite::
+   :width: 100%
+   :height: 600px

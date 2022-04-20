@@ -27,16 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Detail.aggregate
-      ~Detail.bandPosition
-      ~Detail.bin
-      ~Detail.field
-      ~Detail.timeUnit
-      ~Detail.title
-      ~Detail.type
-   
    

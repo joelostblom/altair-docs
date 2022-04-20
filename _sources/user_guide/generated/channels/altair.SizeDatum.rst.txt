@@ -27,14 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~SizeDatum.bandPosition
-      ~SizeDatum.condition
-      ~SizeDatum.datum
-      ~SizeDatum.title
-      ~SizeDatum.type
-   
    

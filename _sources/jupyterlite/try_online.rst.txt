@@ -1,0 +1,8 @@
+Try Altair Online
+=================
+
+Open in fullscreen mode: <link>
+
+.. jupyterlite::
+   :width: 100%
+   :height: 600px

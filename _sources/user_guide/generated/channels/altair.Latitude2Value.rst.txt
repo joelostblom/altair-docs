@@ -27,10 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Latitude2Value.value
-   
    

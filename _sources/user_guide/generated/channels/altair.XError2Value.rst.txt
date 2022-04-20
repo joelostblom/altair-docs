@@ -27,10 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~XError2Value.value
-   
    

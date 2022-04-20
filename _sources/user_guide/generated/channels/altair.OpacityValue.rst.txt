@@ -27,11 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~OpacityValue.condition
-      ~OpacityValue.value
-   
    

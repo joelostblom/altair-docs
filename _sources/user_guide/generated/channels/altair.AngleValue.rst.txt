@@ -27,11 +27,4 @@
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~AngleValue.condition
-      ~AngleValue.value
-   
    
