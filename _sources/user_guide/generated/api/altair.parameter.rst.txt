@@ -1,0 +1,6 @@
+﻿altair.parameter
+================
+
+.. currentmodule:: altair
+
+.. autofunction:: parameter
