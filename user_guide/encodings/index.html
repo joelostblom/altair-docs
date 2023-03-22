@@ -1,12 +1,15 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-theme="light">
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Encodings &#8212; Vega-Altair 5.0.0 documentation</title>
+    <title>Encodings &#8212; Vega-Altair 5.0.0dev documentation</title>
   
   
   
@@ -16,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/altair-plot.css" />
@@ -33,108 +36,117 @@
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/encodings/index';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Channels" href="channels.html" />
     <link rel="prev" title="Specifying Data" href="../data.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
 
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
-    
+</form></div>
+  </div>
 
 
-<div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
-
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code> <span class="pre">(more info <a href='https://github.com/altair-viz/altair/issues/2937'>#2937</a>)</span>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
   </div>
 
   
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
+    <span class="fa-solid fa-bars"></span>
   </label>
-  <div id="navbar-start">
-    
-    
   
-
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
 
 <a class="navbar-brand logo" href="../../index.html">
-
   
   
   
   
-  
-  
-  
-
-  
-    <img src="../../_static/altair-logo-light.png" class="logo__image only-light" alt="Logo image">
-    <img src="../../_static/altair-logo-light.png" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
     
-    <a class="navbar-brand" href="../../index.html">
+    
+    
+    <img src="../../_static/altair-logo-light.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/altair-logo-light.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+      <div class="navbar-item"><a class="navbar-brand" href="../../index.html">
 <p class="title">Vega-Altair</p>
 </a>
-
+</div>
     
   </div>
-
+  
   
   <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../getting_started/overview.html">
                         Getting Started
@@ -158,14 +170,14 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../API.html">
-                        API Reference
+                        API
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../ecosystem.html">
-                        Ecosystem
+                        Resources
                       </a>
                     </li>
                 
@@ -176,32 +188,39 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
+  </ul>
+</nav></div>
       
     </div>
-
-    <div id="navbar-end">
+    
+    
+    <div class="navbar-header-items__end">
       
-        <div class="navbar-end-item navbar-persistent--container">
+        <div class="navbar-item navbar-persistent--container">
           
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
         </div>
       
       
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
+  </button>
+`);
+</script></div>
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -210,7 +229,8 @@
           
           
           
-          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github fa-lg"></i></span>
+          
+          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -221,53 +241,58 @@
           
           
           
-          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
+          
+          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
             <label class="sr-only">StackOverflow</label></a>
         </li>
-      </ul>
-      </div>
+</ul></div>
       
     </div>
+    
   </div>
-
-
   
   
     <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
     </div>
   
 
   
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
       <span class="fa-solid fa-outdent"></span>
-  </label>
+    </label>
   
-
 </div>
-  </nav>
-  
 
+    </nav>
+  
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       <div class="bd-sidebar-primary bd-sidebar">
         
+
   
   <div class="sidebar-header-items sidebar-primary__section">
     
     
       <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
         
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../getting_started/overview.html">
                         Getting Started
@@ -291,14 +316,14 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../API.html">
-                        API Reference
+                        API
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../ecosystem.html">
-                        Ecosystem
+                        Resources
                       </a>
                     </li>
                 
@@ -309,27 +334,28 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
+  </ul>
+</nav></div>
+        
       </div>
-      
-      </div>
-    
-
     
     
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -338,7 +364,8 @@
           
           
           
-          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github fa-lg"></i></span>
+          
+          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -349,24 +376,21 @@
           
           
           
-          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
+          
+          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
             <label class="sr-only">StackOverflow</label></a>
         </li>
-      </ul>
+</ul></div>
+        
       </div>
-      
-    </div>
     
   </div>
-
   
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">
-    Section Navigation
-  </p>
-  <div class="bd-toc-item navbar-nav">
-    <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../data.html">Specifying Data</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Encodings</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -445,34 +469,62 @@
 <li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data Transformers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../large_datasets.html">Large Datasets</a></li>
 </ul>
-
-  </div>
-</nav>
+</div>
+</nav></div>
     </div>
-  </div>
   
-
   
-  <div class="sidebar-end-items sidebar-primary__section">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
   
   <div id="rtd-footer-container"></div>
 
+
       </div>
+      
       <main id="main-content" class="bd-main">
         
         
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
-            </div>
-            
-            
-            <article class="bd-article" role="main">
+          <div class="bd-content">
+            <div class="bd-article-container">
               
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../data.html" class="nav-link">Specifying Data</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Encodings</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="encodings">
 <span id="user-guide-encoding"></span><h1>Encodings<a class="headerlink" href="#encodings" title="Permalink to this heading">#</a></h1>
 <p>The key to creating meaningful visualizations is to map <em>properties of the data</em>
@@ -485,6 +537,8 @@ method.</p>
 <code class="docutils literal notranslate"><span class="pre">color</span></code> (the color of the marker), and <code class="docutils literal notranslate"><span class="pre">shape</span></code> (the shape of the point marker):</p>
 <div class="highlight-python notranslate" id="index-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+
 <span class="n">cars</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="p">()</span>
 
 <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -815,6 +869,66 @@ the long-form equivalent:</p>
 </tr>
 </tbody>
 </table>
+<section id="escaping-special-characters-in-column-names">
+<h3>Escaping special characters in column names<a class="headerlink" href="#escaping-special-characters-in-column-names" title="Permalink to this heading">#</a></h3>
+<p>Seeing that Altair uses <code class="docutils literal notranslate"><span class="pre">:</span></code> as a special character
+to indicate the encoding data type,
+you might wonder what happens
+when the column name in your data includes a colon.
+When this is the case
+you will need to either rename the column or escape the colon.
+This is also true for other special characters
+such as <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">[]</span></code> which are used to access nested attributes
+in some data structures.</p>
+<p>The recommended thing to do when you have special characters in a column name
+is to rename your columns.
+For example, in Pandas you could replace <code class="docutils literal notranslate"><span class="pre">:</span></code> with <code class="docutils literal notranslate"><span class="pre">_</span></code>
+via <code class="docutils literal notranslate"><span class="pre">df.rename(columns</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x.replace(':',</span> <span class="pre">'_'))</span></code>.
+If you don’t want to rename your columns
+you will need to escape the special characters using a backslash:</p>
+<div class="highlight-python notranslate" id="index-rst-altair-source-8"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;col:colon&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="s1">&#39;col.period&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;col[brackets]&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+<span class="p">})</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;col\:colon&#39;</span><span class="p">,</span>
+    <span class="c1"># Remove the backslash in the title</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;col\.period&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;col.period&#39;</span><span class="p">),</span>
+    <span class="c1"># Specify the data type</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;col\[brackets\]:N&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="index-rst-altair-plot-8">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-307492ad0329439d4b200fbafc72641a"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "col\\[brackets\\]", "type": "nominal"}, "x": {"field": "col\\:colon", "type": "quantitative"}, "y": {"field": "col\\.period", "title": "col.period", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-307492ad0329439d4b200fbafc72641a": [{"col:colon": 1, "col.period": "A", "col[brackets]": 0}, {"col:colon": 2, "col.period": "B", "col[brackets]": 1}, {"col:colon": 3, "col.period": "C", "col[brackets]": 2}]}};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#index-rst-altair-plot-8', spec, opt).catch(console.err);
+  });
+</script>
+</div><p>As can be seen above,
+indicating the data type is optional
+just as for columns without escaped characters.
+Note that the axes titles include the backslashes by default
+and you will need to manually set the title strings to remove them.
+If you are using the long form syntax for encodings,
+you do not need to escape colons as the type is explicit,
+e.g. <code class="docutils literal notranslate"><span class="pre">alt.X(field='col:colon',</span> <span class="pre">type='quantitative')</span></code>
+(but periods and brackets still need to be escaped
+in the long form syntax unless they are used to index nested data structures).</p>
+</section>
 </section>
 <section id="binning-and-aggregation">
 <span id="encoding-aggregates"></span><h2>Binning and Aggregation<a class="headerlink" href="#binning-and-aggregation" title="Permalink to this heading">#</a></h2>
@@ -827,7 +941,7 @@ splitting data based on the bin it falls in, aggregating the results within
 each bin using a <em>count</em> of the data, and then combining the results into
 a final figure.</p>
 <p>In Altair, such an operation looks like this:</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-8"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-9"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Horsepower&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span>
     <span class="c1"># could also use alt.Y(aggregate=&#39;count&#39;, type=&#39;quantitative&#39;)</span>
@@ -835,7 +949,7 @@ a final figure.</p>
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-8">
+<div id="index-rst-altair-plot-9">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -846,7 +960,7 @@ a final figure.</p>
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-8', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-9', spec, opt).catch(console.err);
   });
 </script>
 </div><p>Notice here we use the shorthand version of expressing an encoding channel
@@ -856,7 +970,7 @@ specified.</p>
 <p>Similarly, we can create a two-dimensional histogram using, for example, the
 size of points to indicate counts within the grid (sometimes called
 a “Bubble Plot”):</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-9"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-10"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Horsepower&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Miles_per_Gallon&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
     <span class="n">size</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">,</span>
@@ -864,7 +978,7 @@ a “Bubble Plot”):</p>
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-9">
+<div id="index-rst-altair-plot-10">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -875,13 +989,13 @@ a “Bubble Plot”):</p>
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-9', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-10', spec, opt).catch(console.err);
   });
 </script>
 </div><p>There is no need, however, to limit aggregations to counts alone. For example,
 we could similarly create a plot where the color of each point
 represents the mean of a third quantity, such as acceleration:</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-10"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-11"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Horsepower&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Miles_per_Gallon&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
     <span class="n">size</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">,</span>
@@ -890,7 +1004,7 @@ represents the mean of a third quantity, such as acceleration:</p>
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-10">
+<div id="index-rst-altair-plot-11">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -901,7 +1015,7 @@ represents the mean of a third quantity, such as acceleration:</p>
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-10', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-11', spec, opt).catch(console.err);
   });
 </script>
 </div><section id="aggregation-functions">
@@ -1031,7 +1145,7 @@ an axis by the value of some other field in the dataset.</p></li>
 </ul>
 <p>Here is an example of applying these five different sort approaches on the
 x-axis, using the barley dataset:</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-11"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-12"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 
 <span class="n">barley</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">barley</span><span class="p">()</span>
@@ -1088,7 +1202,7 @@ x-axis, using the barley dataset:</p>
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-11">
+<div id="index-rst-altair-plot-12">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1099,14 +1213,14 @@ x-axis, using the barley dataset:</p>
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-11', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-12', spec, opt).catch(console.err);
   });
 </script>
 </div><p>The last two charts are the same because the default aggregation
 (see <a class="reference internal" href="#encoding-aggregates"><span class="std std-ref">Binning and Aggregation</span></a>) is <code class="docutils literal notranslate"><span class="pre">mean</span></code>. To highlight the
 difference between sorting via channel and sorting via field consider the
 following example where we don’t aggregate the data:</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-12"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-13"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 
 <span class="n">barley</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">barley</span><span class="p">()</span>
@@ -1133,7 +1247,7 @@ following example where we don’t aggregate the data:</p>
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-12">
+<div id="index-rst-altair-plot-13">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1144,7 +1258,7 @@ following example where we don’t aggregate the data:</p>
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-12', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-13', spec, opt).catch(console.err);
   });
 </script>
 </div><p>By passing a <a class="reference internal" href="../generated/core/altair.EncodingSortField.html#altair.EncodingSortField" title="altair.EncodingSortField"><code class="xref py py-class docutils literal notranslate"><span class="pre">EncodingSortField</span></code></a> class to <code class="docutils literal notranslate"><span class="pre">sort</span></code> we have more control over
@@ -1154,7 +1268,7 @@ the sorting process.</p>
 <p>While the above examples show sorting of axes by specifying <code class="docutils literal notranslate"><span class="pre">sort</span></code> in the
 <a class="reference internal" href="../generated/channels/altair.X.html#altair.X" title="altair.X"><code class="xref py py-class docutils literal notranslate"><span class="pre">X</span></code></a> and <a class="reference internal" href="../generated/channels/altair.Y.html#altair.Y" title="altair.Y"><code class="xref py py-class docutils literal notranslate"><span class="pre">Y</span></code></a> encodings, legends can be sorted by specifying
 <code class="docutils literal notranslate"><span class="pre">sort</span></code> in the <a class="reference internal" href="../generated/core/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a> encoding:</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-13"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">barley</span><span class="p">)</span><span class="o">.</span><span class="n">mark_rect</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-14"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">barley</span><span class="p">)</span><span class="o">.</span><span class="n">mark_rect</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;mean(yield):Q&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;ascending&#39;</span><span class="p">),</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;site:N&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;descending&#39;</span><span class="p">),</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;site:N&#39;</span><span class="p">,</span>
@@ -1165,7 +1279,7 @@ the sorting process.</p>
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-13">
+<div id="index-rst-altair-plot-14">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1176,7 +1290,7 @@ the sorting process.</p>
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-13', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-14', spec, opt).catch(console.err);
   });
 </script>
 </div><p>Here the y-axis is sorted reverse-alphabetically, while the color legend is
@@ -1194,7 +1308,7 @@ it is also useful to map to a single constant value. In Altair, you can do this 
 <p><code class="docutils literal notranslate"><span class="pre">datum</span></code> is particularly useful for annotating a specific data value.
 For example, you can use it with a rule mark to highlight a
 threshold value (e.g., 300 dollars stock price).</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-14"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-15"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 
 <span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">stocks</span><span class="p">()</span>
@@ -1212,7 +1326,7 @@ threshold value (e.g., 300 dollars stock price).</p>
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-14">
+<div id="index-rst-altair-plot-15">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1223,11 +1337,11 @@ threshold value (e.g., 300 dollars stock price).</p>
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-14', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-15', spec, opt).catch(console.err);
   });
 </script>
 </div><p>If we instead used <code class="docutils literal notranslate"><span class="pre">alt.value</span></code> in this example, we would position the rule 300 pixels from the top of the chart border rather than at the 300 dollars position. Since the default charts height is 300 pixels, this will show the dotted line just on top of the x-axis -line:</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-15"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeDash</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-16"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeDash</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
 <span class="p">)</span>
 
@@ -1235,7 +1349,7 @@ threshold value (e.g., 300 dollars stock price).</p>
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-15">
+<div id="index-rst-altair-plot-16">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1246,7 +1360,7 @@ threshold value (e.g., 300 dollars stock price).</p>
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-15', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-16', spec, opt).catch(console.err);
   });
 </script>
 </div><p>If we want to use <code class="docutils literal notranslate"><span class="pre">datum</span></code>  to highlight a certain year on the x-axis,
@@ -1254,7 +1368,7 @@ we can’t simply type in the year as an integer,
 but instead need to use <code class="docutils literal notranslate"><span class="pre">datum</span></code> together with <a class="reference internal" href="../generated/core/altair.DateTime.html#altair.DateTime" title="altair.DateTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTime</span></code></a>.
 Here we also set the color for the rule to the same one as the line for the symbol <code class="docutils literal notranslate"><span class="pre">MSFT</span></code>
 with <code class="docutils literal notranslate"><span class="pre">alt.datum(&quot;MSFT&quot;)</span></code>.</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-16"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-17"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 
 <span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">stocks</span><span class="p">()</span>
@@ -1273,7 +1387,7 @@ with <code class="docutils literal notranslate"><span class="pre">alt.datum(&quo
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-16">
+<div id="index-rst-altair-plot-17">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1284,7 +1398,7 @@ with <code class="docutils literal notranslate"><span class="pre">alt.datum(&quo
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-16', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-17', spec, opt).catch(console.err);
   });
 </script>
 </div><p>Similar to when mapping to a data column, when using <code class="docutils literal notranslate"><span class="pre">datum</span></code> different encoding channels
@@ -1292,7 +1406,7 @@ may support <code class="docutils literal notranslate"><span class="pre">band</s
 However, data transforms (e.g. <code class="docutils literal notranslate"><span class="pre">aggregate</span></code>, <code class="docutils literal notranslate"><span class="pre">bin</span></code>, <code class="docutils literal notranslate"><span class="pre">timeUnit</span></code>, <code class="docutils literal notranslate"><span class="pre">sort</span></code>) cannot be applied.</p>
 <p>Expanding on the example above, if you would want to color the <code class="docutils literal notranslate"><span class="pre">rule</span></code> mark regardless of
 the color scale used for the lines, you can use <code class="docutils literal notranslate"><span class="pre">value</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">alt.value(&quot;red&quot;)</span></code>:</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-17"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-18"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 
 <span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">stocks</span><span class="p">()</span>
@@ -1311,7 +1425,7 @@ the color scale used for the lines, you can use <code class="docutils literal no
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-17">
+<div id="index-rst-altair-plot-18">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1322,11 +1436,11 @@ the color scale used for the lines, you can use <code class="docutils literal no
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-17', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-18', spec, opt).catch(console.err);
   });
 </script>
 </div><p>One caution is that <code class="docutils literal notranslate"><span class="pre">alt.datum</span></code> and <code class="docutils literal notranslate"><span class="pre">alt.value</span></code> do not possess the (newly introduced as of Altair 5.0) method-based syntax to set channel options described in <a class="reference internal" href="#method-based-attribute-setting"><span class="std std-ref">Alternative Syntax for Channel Options</span></a>. For example, if you are using <code class="docutils literal notranslate"><span class="pre">alt.datum</span></code> for the <code class="docutils literal notranslate"><span class="pre">y</span></code> channel encoding and you wish to use an option setter method (e.g., <code class="docutils literal notranslate"><span class="pre">scale</span></code>), then you can use <a class="reference internal" href="../generated/channels/altair.YDatum.html#altair.YDatum" title="altair.YDatum"><code class="xref py py-class docutils literal notranslate"><span class="pre">YDatum</span></code></a> instead.  Here is a simple example.</p>
-<div class="highlight-python notranslate" id="index-rst-altair-source-18"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="index-rst-altair-source-19"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 
 <span class="n">bar</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">()</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">YDatum</span><span class="p">(</span><span class="mi">220</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">)),</span>
@@ -1337,7 +1451,7 @@ the color scale used for the lines, you can use <code class="docutils literal no
 </pre></div>
 </div>
 
-<div id="index-rst-altair-plot-18">
+<div id="index-rst-altair-plot-19">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1348,7 +1462,7 @@ the color scale used for the lines, you can use <code class="docutils literal no
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#index-rst-altair-plot-18', spec, opt).catch(console.err);
+      vegaEmbed('#index-rst-altair-plot-19', spec, opt).catch(console.err);
   });
 </script>
 </div><p>If you were to instead use <code class="docutils literal notranslate"><span class="pre">y=alt.datum(220).scale(domain=(0,500))</span></code>, an <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> would be raised, due to the fact that <code class="docutils literal notranslate"><span class="pre">alt.datum(220)</span></code> simply returns a Python dictionary and does not possess a <code class="docutils literal notranslate"><span class="pre">scale</span></code> attribute.  If you insisted on producing the preceding example using <code class="docutils literal notranslate"><span class="pre">alt.datum</span></code>, one option would be to use <code class="docutils literal notranslate"><span class="pre">y=alt.datum(220,</span> <span class="pre">scale={&quot;domain&quot;:</span> <span class="pre">(0,500)})</span></code>.  Nevertheless, the <code class="docutils literal notranslate"><span class="pre">alt.YDatum</span></code> approach is strongly preferred to this “by-hand” approach of supplying a dictionary to <code class="docutils literal notranslate"><span class="pre">scale</span></code>.  As one benefit, tab-completions are available using the <code class="docutils literal notranslate"><span class="pre">alt.YDatum</span></code> approach.  For example, typing <code class="docutils literal notranslate"><span class="pre">alt.YDatum(220).scale(do</span></code> and hitting <code class="docutils literal notranslate"><span class="pre">tab</span></code> in an environment such as JupyterLab will offer <code class="docutils literal notranslate"><span class="pre">domain</span></code>, <code class="docutils literal notranslate"><span class="pre">domainMax</span></code>, <code class="docutils literal notranslate"><span class="pre">domainMid</span></code>, and <code class="docutils literal notranslate"><span class="pre">domainMin</span></code> as possible completions.</p>
@@ -1358,140 +1472,118 @@ the color scale used for the lines, you can use <code class="docutils literal no
 </section>
 
 
-            </article>
-            
-            
-            
-            <footer class="bd-footer-article">
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="../data.html" title="previous page">
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../data.html"
+       title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Specifying Data</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Specifying Data</p>
       </div>
-  </a>
-  <a class='right-next' id="next-link" href="channels.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Channels</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
+    </a>
+    <a class="right-next"
+       href="channels.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Channels</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-            </footer>
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
+                </footer>
               
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#alternative-syntax-for-channel-options">
-   Alternative Syntax for Channel Options
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#encoding-data-types">
-   Encoding Data Types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effect-of-data-type-on-color-scales">
-     Effect of Data Type on Color Scales
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effect-of-data-type-on-axis-scales">
-     Effect of Data Type on Axis Scales
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#encoding-shorthands">
-   Encoding Shorthands
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binning-and-aggregation">
-   Binning and Aggregation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aggregation-functions">
-     Aggregation Functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sort-option">
-   Sort Option
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting-legends">
-     Sorting Legends
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#datum-and-value">
-   Datum and Value
-  </a>
- </li>
-</ul>
-
-</nav>
-</div>
-
-<div class="toc-item">
-  
-<div id="searchbox"></div>
-</div>
-
-<div class="toc-item">
-  
-</div>
-
-<div class="toc-item">
-  
-</div>
-
             </div>
-          
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-syntax-for-channel-options">Alternative Syntax for Channel Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-data-types">Encoding Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-data-type-on-color-scales">Effect of Data Type on Color Scales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-data-type-on-axis-scales">Effect of Data Type on Axis Scales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-shorthands">Encoding Shorthands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escaping-special-characters-in-column-names">Escaping special characters in column names</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binning-and-aggregation">Binning and Aggregation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregation-functions">Aggregation Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-option">Sort Option</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-legends">Sorting Legends</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datum-and-value">Datum and Value</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
-        </footer>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
         
       </main>
     </div>
   </div>
-
   
-    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-  <footer class="bd-footer"><div class="bd-footer__inner container">
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2016-2023, Vega-Altair Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
   
 </div>
+
   </footer>
   </body>
 </html>

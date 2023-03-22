@@ -38,7 +38,7 @@ directly in the `hconcat()` function, which joins the two plots together.
     source = pd.DataFrame({"x": x, "y":y, "m":m})
 
     # interval selection in the scatter plot
-    pts = alt.selection(type="interval", encodings=["x"])
+    pts = alt.selection_interval(encodings=["x"])
 
     # left panel: scatter plot
     points = alt.Chart().mark_point(filled=True, color="black").encode(
