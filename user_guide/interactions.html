@@ -1240,11 +1240,18 @@ to data-driven and logic-driven input elements,</p>
 </table>
 <section id="widget-binding">
 <h3>Widget Binding<a class="headerlink" href="#widget-binding" title="Permalink to this heading">#</a></h3>
-<p>Widgets are HTML input elements, such as drop-downs, sliders, radio buttons, and search boxes.</p>
-<section id="data-driven-widgets">
-<h4>Data-Driven Widgets<a class="headerlink" href="#data-driven-widgets" title="Permalink to this heading">#</a></h4>
-<p>Data-driven widgets use the active value(s) of the widget to look up matching points with matching values in the chart’s dataset.
-For example, we can establish a binding between an input widget and a point selection to filter the data as in the example below where a drop-down is used to highlight cars from a specific <code class="docutils literal notranslate"><span class="pre">Origin</span></code>:</p>
+<p>Widgets are HTML input elements, such as drop-downs, sliders, radio buttons, and search boxes.
+There are a few different strategies to use with widgets,
+which we cover in the sections below.</p>
+<section id="data-driven-lookups">
+<h4>Data-Driven Lookups<a class="headerlink" href="#data-driven-lookups" title="Permalink to this heading">#</a></h4>
+<p>Data-driven lookups use the active value(s) of the widget
+together with a <code class="docutils literal notranslate"><span class="pre">selection</span></code> parameter
+to look up points with matching values in the chart’s dataset.
+For example,
+we can establish a binding between an input widget and a point selection
+to filter the data as in the example below
+where a drop-down is used to highlight cars of a specific <code class="docutils literal notranslate"><span class="pre">Origin</span></code>:</p>
 <div class="highlight-python notranslate" id="interactions-rst-altair-source-20"><div class="highlight"><pre><span></span><span class="n">input_dropdown</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">binding_select</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span><span class="s1">&#39;USA&#39;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Region &#39;</span><span class="p">)</span>
 <span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_point</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Origin&#39;</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="n">input_dropdown</span><span class="p">)</span>
 <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span>
@@ -1280,7 +1287,8 @@ For example, we can establish a binding between an input widget and a point sele
 </div><p>As you can see above,
 we are still using <code class="docutils literal notranslate"><span class="pre">conditions</span></code> to make the chart respond to the selection,
 just as we did without widgets.
-Bindings and input elements can also be used to filter data allowing the user to see just the selected points as in the example below.
+Bindings and input elements can also be used to filter data
+allowing the user to see just the selected points as in the example below.
 In this example, we also add an empty selection
 to illustrate how you can go back to showing all points
 after a selection has been made in a radio button or drop-down
@@ -1374,65 +1382,30 @@ to see the point highlighted.</p>
       vegaEmbed('#interactions-rst-altair-plot-22', spec, opt).catch(console.err);
   });
 </script>
-</div><p>It is not always useful to require an exact match to the search syntax,and when we will be learning about <a class="reference internal" href="#expressions"><span class="std std-ref">Expressions</span></a>, we will see how we can match partial strings via a regex instead.</p>
+</div><p>It is not always useful to require an exact match to the search syntax,
+and when we will be learning about <a class="reference internal" href="#expressions"><span class="std std-ref">Expressions</span></a>,
+we will see how we can match partial strings via a regex instead.</p>
 </section>
-<section id="logic-driven-widgets">
-<h4>Logic-Driven Widgets<a class="headerlink" href="#logic-driven-widgets" title="Permalink to this heading">#</a></h4>
-<p>So far we have seen the use of selections to match and lookup exact values in our data.
+<section id="data-driven-comparisons">
+<h4>Data-Driven Comparisons<a class="headerlink" href="#data-driven-comparisons" title="Permalink to this heading">#</a></h4>
+<p>So far we have seen the use of selections
+to lookup points with precisely matching values in our data.
 This is often useful,
-but sometimes we might want to make a logic comparison
-directly in the conditional statement instead.
-For example, for a checkbox widget
-we want to check if the state of the checkbox is True or False
-and execute some action depending on whether it is checked or not.
-When we are using a checkbox as a toggle like this,
-we need to use <cite>param</cite> instead of <cite>selection_point</cite>,
-since we don’t want to check if there are True/False values in our data,
-just if the value of the check box is True (checked) or False (unchecked):</p>
-<div class="highlight-python notranslate" id="interactions-rst-altair-source-23"><div class="highlight"><pre><span></span><span class="n">bind_checkbox</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">binding_checkbox</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Scale point size by &quot;Acceleration&quot;: &#39;</span><span class="p">)</span>
-<span class="n">param_checkbox</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">bind_checkbox</span><span class="p">)</span>
-
-<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Horsepower:Q&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Miles_per_Gallon:Q&#39;</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span>
-        <span class="n">param_checkbox</span><span class="p">,</span>
-        <span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">&#39;Acceleration:Q&#39;</span><span class="p">),</span>
-        <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
-    <span class="p">)</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_params</span><span class="p">(</span>
-    <span class="n">param_checkbox</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-
-<div id="interactions-rst-altair-plot-23">
-<script>
-  // embed when document is loaded, to ensure vega library is available
-  // this works on all modern browsers, except IE8 and older
-  document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "point"}, "encoding": {"size": {"condition": {"param": "param_48", "field": "Acceleration", "type": "quantitative"}, "value": 25}, "x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "params": [{"name": "param_48", "bind": {"input": "checkbox", "name": "Scale point size by \"Acceleration\": "}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
-      var opt = {
-        "mode": "vega-lite",
-        "renderer": "canvas",
-        "actions": {"editor": true, "source": true, "export": true}
-      };
-      vegaEmbed('#interactions-rst-altair-plot-23', spec, opt).catch(console.err);
-  });
-</script>
-</div><p>Similarly, we might want to create a condition
+but sometimes we might want to make a more complex comparison
+than an exact match.
+For example,
+we might want to create a condition
 where we want to access the value of a slider
-to use directly in a logic expression,
-e.g. compare if it is smaller or larger than the values in the data.
-For this workflow it is also recommended to use <code class="docutils literal notranslate"><span class="pre">param</span></code>,
+to use directly in a comparison with values of the data.
+For this workflow it is recommended to use variable parameters via <code class="docutils literal notranslate"><span class="pre">param</span></code>
 and as you can see below,
 we use the special syntax <code class="docutils literal notranslate"><span class="pre">datum.xval</span></code>
-to reference the column to compare again.
+to reference the column to compare against.
 Prefixing the column name with <code class="docutils literal notranslate"><span class="pre">datum</span></code>
 tells Altair that we want to compare to a column in the dataframe,
 rather than to a Python variable called <code class="docutils literal notranslate"><span class="pre">xval</span></code>,
 which would have been the case if we just wrote <code class="docutils literal notranslate"><span class="pre">xval</span> <span class="pre">&lt;</span> <span class="pre">selector</span></code>.</p>
-<div class="highlight-python notranslate" id="interactions-rst-altair-source-24"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate" id="interactions-rst-altair-source-23"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 
@@ -1459,7 +1432,7 @@ which would have been the case if we just wrote <code class="docutils literal no
 </pre></div>
 </div>
 
-<div id="interactions-rst-altair-plot-24">
+<div id="interactions-rst-altair-plot-23">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1470,14 +1443,14 @@ which would have been the case if we just wrote <code class="docutils literal no
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#interactions-rst-altair-plot-24', spec, opt).catch(console.err);
+      vegaEmbed('#interactions-rst-altair-plot-23', spec, opt).catch(console.err);
   });
 </script>
-</div><p>In this particular case we could actually have used a selection
-as selection values can be accessed directly and used in expressions that affect the
+</div><p>In this particular case we could actually have used a selection parameter
+since selection values can be accessed directly and used in expressions that affect the
 chart. For example, here we create a slider to choose a cutoff value, and color
 points based on whether they are smaller or larger than the value:</p>
-<div class="highlight-python notranslate" id="interactions-rst-altair-source-25"><div class="highlight"><pre><span></span><span class="n">slider</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">binding_range</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Cutoff &#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate" id="interactions-rst-altair-source-24"><div class="highlight"><pre><span></span><span class="n">slider</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">binding_range</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Cutoff &#39;</span><span class="p">)</span>
 <span class="n">selector</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_point</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SelectorName&quot;</span><span class="p">,</span>
     <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cutoff&#39;</span><span class="p">],</span>
@@ -1499,7 +1472,7 @@ points based on whether they are smaller or larger than the value:</p>
 </pre></div>
 </div>
 
-<div id="interactions-rst-altair-plot-25">
+<div id="interactions-rst-altair-plot-24">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
@@ -1510,7 +1483,7 @@ points based on whether they are smaller or larger than the value:</p>
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#interactions-rst-altair-plot-25', spec, opt).catch(console.err);
+      vegaEmbed('#interactions-rst-altair-plot-24', spec, opt).catch(console.err);
   });
 </script>
 </div><p>While it can be useful to know
@@ -1522,14 +1495,59 @@ for simple interactions like this one
 since they can also be accessed in expression strings
 as we saw above.
 Similarly,
-it is often possible to use equality logic statements
+it is often possible to use equality statements
 such as <code class="docutils literal notranslate"><span class="pre">alt.datum.xval</span> <span class="pre">==</span> <span class="pre">selector</span></code> to lookup exact values
-via the logic driven widget syntax,
-but it is often more convenient to switch to a selection
-and specifying a field/encoding to lookup exact values.</p>
-<p>For logic-driven widgets,
-an interesting use of the more general <code class="docutils literal notranslate"><span class="pre">binding</span></code> function
-is to introduce a color picker
+but it is often more convenient to switch to a selection parameter
+and specifying a field/encoding.</p>
+</section>
+<section id="logic-driven-comparisons">
+<h4>Logic-Driven Comparisons<a class="headerlink" href="#logic-driven-comparisons" title="Permalink to this heading">#</a></h4>
+<p>Data-driven lookups and comparisons are very helpful
+but sometimes we might want to make a logic comparison
+in the conditional statement instead
+that is independent of the data.
+For example, for a checkbox widget
+we want to check if the state of the checkbox is True or False
+and execute some action depending on whether it is checked or not.
+When we are using a checkbox as a toggle like this,
+we need to use <cite>param</cite> instead of <cite>selection_point</cite>,
+since we don’t want to check if there are True/False values in our data,
+just if the value of the check box is True (checked) or False (unchecked):</p>
+<div class="highlight-python notranslate" id="interactions-rst-altair-source-25"><div class="highlight"><pre><span></span><span class="n">bind_checkbox</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">binding_checkbox</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Scale point size by &quot;Acceleration&quot;: &#39;</span><span class="p">)</span>
+<span class="n">param_checkbox</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">bind_checkbox</span><span class="p">)</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Horsepower:Q&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Miles_per_Gallon:Q&#39;</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span>
+        <span class="n">param_checkbox</span><span class="p">,</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">&#39;Acceleration:Q&#39;</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_params</span><span class="p">(</span>
+    <span class="n">param_checkbox</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="interactions-rst-altair-plot-25">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "point"}, "encoding": {"size": {"condition": {"param": "param_48", "field": "Acceleration", "type": "quantitative"}, "value": 25}, "x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "params": [{"name": "param_48", "bind": {"input": "checkbox", "name": "Scale point size by \"Acceleration\": "}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#interactions-rst-altair-plot-25', spec, opt).catch(console.err);
+  });
+</script>
+</div><p>Another example of creating a widget binding that is independent of the data,
+involves an interesting use case for the more general <code class="docutils literal notranslate"><span class="pre">binding</span></code> function.
+In the next example,
+this function introduces a color picker
 where the user can choose the colors of the chart interactively:</p>
 <div class="highlight-python notranslate" id="interactions-rst-altair-source-26"><div class="highlight"><pre><span></span><span class="n">color_usa</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;#317bb4&quot;</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">binding</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;USA &#39;</span><span class="p">))</span>
 <span class="n">color_europe</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;#ffb54d&quot;</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">binding</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Europe &#39;</span><span class="p">))</span>
@@ -1995,8 +2013,9 @@ mouse and keystroke options, see the <a class="reference external" href="https:/
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-composition">Parameter Composition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bindings-widgets">Bindings &amp; Widgets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#widget-binding">Widget Binding</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-driven-widgets">Data-Driven Widgets</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-driven-widgets">Logic-Driven Widgets</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-driven-lookups">Data-Driven Lookups</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-driven-comparisons">Data-Driven Comparisons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-driven-comparisons">Logic-Driven Comparisons</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-channel-binding">Encoding Channel Binding</a></li>
